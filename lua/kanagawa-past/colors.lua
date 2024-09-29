@@ -22,62 +22,34 @@ end
 
 local hsl = require("kanagawa-past.hsl")
 
-local red50 = hsl.hslToHex(360, 10, 50)
 local red100 = hsl.hslToHex(360, 25, 55)
-local red200 = hsl.hslToHex(360, 25, 60)
-local red300 = hsl.hslToHex(360, 25, 65)
 local red400 = hsl.hslToHex(360, 25, 70)
 
 local deepRed100 = hsl.hslToHex(0, 30, 30)
-local deepRed200 = hsl.hslToHex(0, 30, 35)
 local deepRed300 = hsl.hslToHex(0, 30, 40)
-local deepRed400 = hsl.hslToHex(0, 30, 45)
 
-local pink50 = hsl.hslToHex(314, 15, 65)
 local pink100 = hsl.hslToHex(314, 20, 65)
-local pink200 = hsl.hslToHex(314, 25, 65)
-local pink300 = hsl.hslToHex(314, 30, 65)
-local pink400 = hsl.hslToHex(314, 35, 65)
 
 
 local green100 = hsl.hslToHex(140, 10, 50)
-local green200 = hsl.hslToHex(140, 15, 50)
-local green300 = hsl.hslToHex(140, 20, 50)
-local green400 = hsl.hslToHex(140, 25, 50)
 
 local deepGreen100 = hsl.hslToHex(150, 10, 20)
 local deepGreen200 = hsl.hslToHex(150, 15, 20)
-local deepGreen300 = hsl.hslToHex(150, 20, 20)
-local deepGreen400 = hsl.hslToHex(150, 25, 20)
 
 
 local blue100 = hsl.hslToHex(210, 15, 50)
 local blue200 = hsl.hslToHex(210, 25, 50)
-local blue300 = hsl.hslToHex(210, 35, 50)
-local blue400 = hsl.hslToHex(210, 45, 50)
-
-local easyBlue100 = hsl.hslToHex(210, 45, 80)
-local easyBlue200 = hsl.hslToHex(210, 50, 80)
-local easyBlue300 = hsl.hslToHex(210, 55, 80)
 
 local purple100 = hsl.hslToHex(284, 15, 50)
 local purple200 = hsl.hslToHex(284, 20, 50)
-local purple300 = hsl.hslToHex(284, 25, 50)
-local purple400 = hsl.hslToHex(284, 30, 50)
 
-local black100 = hsl.hslToHex(250, 5, 21)
 local black200 = hsl.hslToHex(250, 5, 18)
-local black300 = hsl.hslToHex(210, 5, 15)
-local black400 = hsl.hslToHex(210, 5, 10)
 
 local gray100 = hsl.hslToHex(210, 0, 30)
 local gray200 = hsl.hslToHex(210, 0, 40)
 local gray300 = hsl.hslToHex(210, 0, 50)
-local gray400 = hsl.hslToHex(210, 0, 60)
 
 local white100 = hsl.hslToHex(35, 10, 65)
-local white200 = hsl.hslToHex(25, 10, 60)
-local white300 = hsl.hslToHex(25, 10, 75)
 local white400 = hsl.hslToHex(25, 10, 70)
 
 local yellow100 = hsl.hslToHex(25, 20, 60)
@@ -86,7 +58,6 @@ local orange100 = hsl.hslToHex(25, 50, 60)
 
 local bgColor = hsl.hslToHex(260, 10, 15)
 local bgColorDark = hsl.hslToHex(260, 0, 12)
-local bgColorDarker = hsl.hslToHex(260, 0, 10)
 
 local Variable = white100
 local String = green100
