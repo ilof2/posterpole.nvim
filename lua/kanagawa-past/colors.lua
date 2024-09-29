@@ -1,3 +1,5 @@
+local config = require("kanagawa-past.config").current
+
 local function clear_hl()
   vim.cmd("hi clear")
   vim.cmd("syntax reset")
@@ -101,7 +103,7 @@ local Deleted = red100
 
 
 
-local bg = bgColor
+local bg = config.transparent and "nil" or bgColor
 local fg = red100
 
 
