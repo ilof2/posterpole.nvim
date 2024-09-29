@@ -7,7 +7,13 @@ M.setup = function(user_opts)
 end
 
 M._colorscheme = function ()
-  require("kanagawa-past.colors").set_all()
+
+  local kanagawa_past = require("kanagawa-past.colors")
+  kanagawa_past.clear_hl()
+
+  vim.g.colors_name = "kanagawa-past"
+  kanagawa_past.set_all()
+
 end
 
 return M

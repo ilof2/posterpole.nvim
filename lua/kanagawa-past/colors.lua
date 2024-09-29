@@ -1,6 +1,7 @@
 local config = require("kanagawa-past.config").current
+M = {}
 
-local function clear_hl()
+M.clear_hl = function ()
   vim.cmd("hi clear")
   vim.cmd("syntax reset")
 end
@@ -198,10 +199,7 @@ local dap_ui_highlights = {
   -- SDapUINormal = {bg = gray100},
 }
 
-M = {}
-
 M.set_all = function ()
-  clear_hl()
   set_highlights(basic_highlights)
   set_highlights(dap_ui_highlights)
   set_highlights(render_markdown_highlights)
