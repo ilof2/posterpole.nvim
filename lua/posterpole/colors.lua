@@ -1,7 +1,7 @@
 local config = require("posterpole.config").current
 M = {}
 
-M.clear_hl = function ()
+M.clear_hl = function()
   vim.cmd("hi clear")
   vim.cmd("syntax reset")
 end
@@ -22,42 +22,50 @@ end
 
 local hsl = require("posterpole.hsl")
 
-local red100 = hsl.hslToHex(360, 25, 55)
-local red400 = hsl.hslToHex(360, 25, 70)
+local red100 = hsl.hslToHex(360, 25, 55 + config.brightness)
+local red400 = hsl.hslToHex(360, 25, 70 + config.brightness)
 
-local deepRed100 = hsl.hslToHex(0, 30, 30)
-local deepRed300 = hsl.hslToHex(0, 30, 40)
+local deepRed100 = hsl.hslToHex(0, 30, 30 + config.brightness)
+local deepRed300 = hsl.hslToHex(0, 30, 40 + config.brightness)
 
-local pink100 = hsl.hslToHex(314, 20, 65)
-
-
-local green100 = hsl.hslToHex(140, 10, 50)
-
-local deepGreen100 = hsl.hslToHex(150, 10, 20)
-local deepGreen200 = hsl.hslToHex(150, 15, 20)
+local pink100 = hsl.hslToHex(314, 20, 65 + config.brightness)
 
 
-local blue100 = hsl.hslToHex(210, 15, 50)
-local blue200 = hsl.hslToHex(210, 25, 50)
+local green100 = hsl.hslToHex(140, 10, 50 + config.brightness)
 
-local purple100 = hsl.hslToHex(284, 15, 50)
-local purple200 = hsl.hslToHex(284, 20, 50)
+local brightGreen100 = hsl.hslToHex(160, 30, 20 + config.brightness)
+local brightGreen200 = hsl.hslToHex(160, 30, 25 + config.brightness)
 
-local black200 = hsl.hslToHex(250, 5, 18)
+local deepGreen100 = hsl.hslToHex(150, 10, 20 + config.brightness)
+local deepGreen200 = hsl.hslToHex(150, 15, 20 + config.brightness)
 
-local gray100 = hsl.hslToHex(210, 0, 30)
-local gray200 = hsl.hslToHex(210, 0, 40)
-local gray300 = hsl.hslToHex(210, 0, 50)
 
-local white100 = hsl.hslToHex(35, 10, 65)
-local white400 = hsl.hslToHex(25, 10, 70)
+local blue100 = hsl.hslToHex(210, 15, 50 + config.brightness)
+local blue200 = hsl.hslToHex(210, 25, 50 + config.brightness)
 
-local yellow100 = hsl.hslToHex(25, 20, 60)
+local purple100 = hsl.hslToHex(284, 15, 50 + config.brightness)
+local purple200 = hsl.hslToHex(284, 20, 50 + config.brightness)
 
-local orange100 = hsl.hslToHex(25, 50, 60)
+local black200 = hsl.hslToHex(250, 5, 18 + config.brightness)
 
-local bgColor = hsl.hslToHex(260, 10, 15)
-local bgColorDark = hsl.hslToHex(260, 0, 12)
+local gray100 = hsl.hslToHex(210, 0, 30 + config.brightness)
+local gray200 = hsl.hslToHex(210, 0, 40 + config.brightness)
+local gray300 = hsl.hslToHex(210, 0, 50 + config.brightness)
+
+local white100 = hsl.hslToHex(35, 10, 65 + config.brightness)
+local white400 = hsl.hslToHex(25, 10, 70 + config.brightness)
+
+local yellow100 = hsl.hslToHex(25, 20, 60 + config.brightness)
+
+local orange100 = hsl.hslToHex(25, 50, 60 + config.brightness)
+
+local bgColor = hsl.hslToHex(260, 10, 15 + config.brightness)
+local bgColorNC = hsl.hslToHex(260, 10, 17 + config.brightness)
+local bgColorDark = hsl.hslToHex(260, 0, 12 + config.brightness)
+
+local bgColorlessColor = config.transparent and "nil" or hsl.hslToHex(260, 0, 12 + config.brightness)
+local bgColorlessNC = hsl.hslToHex(260, 0, 15 + config.brightness)
+local bgColorlessDark = hsl.hslToHex(15, 4, 9 + config.brightness)
 
 local Variable = white100
 local String = green100
@@ -76,12 +84,16 @@ local Deleted = red100
 
 
 local bg = config.transparent and "nil" or bgColor
+local bgColorless = config.transparent and "nil" or bgColorlessColor
+local bgInactive = config.colorless_bg and (config.dim_inactive and bgColorlessNC or bgColorless) or (config.dim_inactive and bgColorNC or bgColor)
+
 local fg = red100
 
 
 local basic_highlights = {
-  Normal = { bg = bg, fg = yellow100 },
-  EndOfBuffer = { bg = bg, fg = gray200 },
+  Normal = { bg = config.colorless_bg and bgColorless or bg, fg = yellow100 },
+  NormalNC = { bg = bgInactive, fg = yellow100 },
+  EndOfBuffer = { bg = config.colorless_bg and bgColorless or bg, fg = gray200 },
   Function = { fg = blue100, gui = "bold" },
   Boolean = { fg = purple100 },                -- boolean constants
   Character = { fg = green100 },               -- character constants
@@ -118,8 +130,8 @@ local basic_highlights = {
   Todo = { fg = "black", bg = purple100 },     -- (preferred) 'TODO' keywords in comments
   DiffAdd = { bg = deepGreen100 },
   DiffDelete = { fg = white400, bg = deepRed100 },
-  DiffText = { bg = hsl.hslToHex(160, 30, 25) },
-  DiffChange = { bg = hsl.hslToHex(160, 30, 20) },
+  DiffText = { bg = brightGreen200 },
+  DiffChange = { bg = brightGreen100 },
   DiagnosticError = { fg = Error },
   DiagnosticWarn = { fg = Warning },
   DiagnosticInfo = { fg = Info },
@@ -146,20 +158,20 @@ local basic_highlights = {
   Question = { fg = green100 },
   LineNr = { fg = gray100 },
   StatusLine = { fg = green100 },
-  StatusLineNC = { fg = green100 },
+  StatusLineNC = { fg = green100, bg = bgColorNC },
 
   ["@variable"] = { fg = Variable },
   LspSignatureActiveParameter = { gui = "underline" }
 }
 
 local render_markdown_highlights = {
-  RenderMarkdownH1Bg = { bg = deepGreen200, gui="bold"},
-  RenderMarkdownH2Bg = { bg = deepRed100, gui="bold"},
-  RenderMarkdownH3Bg = { bg = deepGreen100, gui="bold"},
-  RenderMarkdownH4Bg = { bg = gray100, gui="bold"},
-  RenderMarkdownH5Bg = { bg = gray100, gui="bold"},
-  RenderMarkdownH6Bg = { bg = gray100, gui="bold"},
-  RenderMarkdownCode = { bg = bgColorDark },
+  RenderMarkdownH1Bg = { bg = deepGreen200, gui = "bold" },
+  RenderMarkdownH2Bg = { bg = deepRed100, gui = "bold" },
+  RenderMarkdownH3Bg = { bg = deepGreen100, gui = "bold" },
+  RenderMarkdownH4Bg = { bg = gray100, gui = "bold" },
+  RenderMarkdownH5Bg = { bg = gray100, gui = "bold" },
+  RenderMarkdownH6Bg = { bg = gray100, gui = "bold" },
+  RenderMarkdownCode = { bg = config.colorless_bg and bgColorlessDark or bgColorDark },
 }
 
 local dap_ui_highlights = {
@@ -170,7 +182,7 @@ local dap_ui_highlights = {
   -- SDapUINormal = {bg = gray100},
 }
 
-M.set_all = function ()
+M.set_all = function()
   set_highlights(basic_highlights)
   set_highlights(dap_ui_highlights)
   set_highlights(render_markdown_highlights)

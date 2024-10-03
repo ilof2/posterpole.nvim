@@ -1,4 +1,4 @@
-# posterpole.nvim
+# Posterpole.nvim
 Simple nvim theme with pastel colors which try to emulate an old retro poster vibe
 
 <img width="1896" alt="image" src="https://github.com/user-attachments/assets/2d11538f-85c4-4223-aabd-f98600b06856">
@@ -24,7 +24,10 @@ Lazy:
 ```lua
 -- Default
 require("posterpole").setup({
-  transparent = false
+  transparent = false,
+  colorless_bg = false,
+  dim_inactive = false,
+  brightness = 0,
 })
 ```
 
@@ -43,3 +46,8 @@ require("posterpole").setup({
 ## Inspiration
 * [vague.nvim](https://github.com/vague2k/vague.nvim)
 * [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+
+## Known issues
+1. Colorscheme with `dim_inactive=true` and `transparent=true` looks crappy.
+  The best solution for now - is not to combine these 2 options
+

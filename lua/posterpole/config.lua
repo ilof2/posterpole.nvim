@@ -1,7 +1,10 @@
 M = {}
 
 local default = {
-  transparent = false
+  transparent = false,
+  colorless_bg = false,
+  dim_inactive = false,
+  brightness = 0,
 }
 
 M.current = default
