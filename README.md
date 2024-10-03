@@ -1,7 +1,9 @@
 # Posterpole.nvim
 Simple nvim theme with pastel colors which try to emulate an old retro poster vibe
-
-<img width="1896" alt="image" src="https://github.com/user-attachments/assets/2d11538f-85c4-4223-aabd-f98600b06856">
+> Color background
+<img width="1896" alt="image" src="https://github.com/user-attachments/assets/1bc4b905-b671-4979-acc6-4975151db53f">
+> Colorless backgroud
+<img width="1896" alt="image" src="https://github.com/user-attachments/assets/09b7156a-50e3-4c3b-9596-8b67a977cb15">
 
 This theme does not pretend to be the most customizable or best one, it's was created because I can't find a suitable one for me.
 
