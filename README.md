@@ -9,7 +9,7 @@ This theme does not pretend to be the most customizable or best one, it's was cr
 Lazy:
 ```lua
 {
-  "ilof2/kanagawa-past.nvim",
+  "ilof2/posterpole.nvim",
   priority=1000,
   config = function ()
     require("posterpole").setup({

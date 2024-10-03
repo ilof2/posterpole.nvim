@@ -1,4 +1,4 @@
-local config = require("kanagawa-past.config")
+local config = require("posterpole.config")
 
 local M = {}
 
@@ -8,10 +8,10 @@ end
 
 M._colorscheme = function ()
 
-  local kanagawa_past = require("kanagawa-past.colors")
+  local kanagawa_past = require("posterpole.colors")
   kanagawa_past.clear_hl()
 
-  vim.g.colors_name = "kanagawa-past"
+  vim.g.colors_name = "posterpole"
   kanagawa_past.set_all()
 
 end

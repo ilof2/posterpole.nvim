@@ -1,4 +1,4 @@
-local config = require("kanagawa-past.config").current
+local config = require("posterpole.config").current
 M = {}
 
 M.clear_hl = function ()
@@ -20,7 +20,7 @@ local function set_highlights(highlights)
   end
 end
 
-local hsl = require("kanagawa-past.hsl")
+local hsl = require("posterpole.hsl")
 
 local red100 = hsl.hslToHex(360, 25, 55)
 local red400 = hsl.hslToHex(360, 25, 70)
