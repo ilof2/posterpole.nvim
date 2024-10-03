@@ -1,5 +1,5 @@
 local config = require("posterpole.config").current
-M = {}
+local M = {}
 
 M.clear_hl = function()
   vim.cmd("hi clear")
