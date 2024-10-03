@@ -8,11 +8,11 @@ end
 
 M._colorscheme = function ()
 
-  local kanagawa_past = require("posterpole.colors")
-  kanagawa_past.clear_hl()
+  local posterpole = require("posterpole.colors")
+  posterpole.clear_hl()
 
   vim.g.colors_name = "posterpole"
-  kanagawa_past.set_all()
+  posterpole.set_all()
 
 end
 
