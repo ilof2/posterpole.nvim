@@ -22,46 +22,46 @@ end
 
 local hsl = require("posterpole.hsl")
 
-local red100 = hsl.hslToHex(360, 25, 55 + config.brightness)
-local red400 = hsl.hslToHex(360, 25, 70 + config.brightness)
+local red100 = hsl.hslToHex(360, 25 + config.fg_saturation, 55 + config.brightness)
+local red400 = hsl.hslToHex(360, 25, 70 + config.fg_saturation + config.brightness)
 
-local deepRed100 = hsl.hslToHex(0, 30, 30 + config.brightness)
-local deepRed300 = hsl.hslToHex(0, 30, 40 + config.brightness)
+local deepRed100 = hsl.hslToHex(0, 30 + config.fg_saturation, 30 + config.brightness)
+local deepRed300 = hsl.hslToHex(0, 30 + config.fg_saturation, 40 + config.brightness)
 
-local pink100 = hsl.hslToHex(314, 20, 65 + config.brightness)
-
-
-local green100 = hsl.hslToHex(140, 10, 50 + config.brightness)
-
-local brightGreen100 = hsl.hslToHex(160, 30, 20 + config.brightness)
-local brightGreen200 = hsl.hslToHex(160, 30, 25 + config.brightness)
-
-local deepGreen100 = hsl.hslToHex(150, 10, 20 + config.brightness)
-local deepGreen200 = hsl.hslToHex(150, 15, 20 + config.brightness)
+local pink100 = hsl.hslToHex(314, 20 + config.fg_saturation, 65 + config.brightness)
 
 
-local blue100 = hsl.hslToHex(210, 15, 50 + config.brightness)
-local blue200 = hsl.hslToHex(210, 25, 50 + config.brightness)
+local green100 = hsl.hslToHex(140, 10 + config.fg_saturation, 50 + config.brightness)
 
-local purple100 = hsl.hslToHex(284, 15, 50 + config.brightness)
-local purple200 = hsl.hslToHex(284, 20, 50 + config.brightness)
+local brightGreen100 = hsl.hslToHex(160, 30 + config.fg_saturation, 20 + config.brightness)
+local brightGreen200 = hsl.hslToHex(160, 30 + config.fg_saturation, 25 + config.brightness)
 
-local black200 = hsl.hslToHex(250, 5, 18 + config.brightness)
+local deepGreen100 = hsl.hslToHex(150, 10 + config.fg_saturation, 20 + config.brightness)
+local deepGreen200 = hsl.hslToHex(150, 15 + config.fg_saturation, 20 + config.brightness)
 
-local gray100 = hsl.hslToHex(210, 0, 30 + config.brightness)
-local gray200 = hsl.hslToHex(210, 0, 40 + config.brightness)
-local gray300 = hsl.hslToHex(210, 0, 50 + config.brightness)
 
-local white100 = hsl.hslToHex(35, 10, 65 + config.brightness)
-local white400 = hsl.hslToHex(25, 10, 70 + config.brightness)
+local blue100 = hsl.hslToHex(210, 15 + config.fg_saturation, 50 + config.brightness)
+local blue200 = hsl.hslToHex(210, 25 + config.fg_saturation, 50 + config.brightness)
 
-local yellow100 = hsl.hslToHex(25, 20, 60 + config.brightness)
+local purple100 = hsl.hslToHex(284, 15 + config.fg_saturation, 50 + config.brightness)
+local purple200 = hsl.hslToHex(284, 20 + config.fg_saturation, 50 + config.brightness)
 
-local orange100 = hsl.hslToHex(25, 50, 60 + config.brightness)
+local black200 = hsl.hslToHex(250, 5 + config.fg_saturation, 18 + config.brightness)
 
-local bgColor = hsl.hslToHex(260, 10, 15 + config.brightness)
-local bgColorNC = hsl.hslToHex(260, 10, 18 + config.brightness)
-local bgColorDark = hsl.hslToHex(260, 0, 12 + config.brightness)
+local gray100 = hsl.hslToHex(210, 0, 30 + config.brightness + config.fg_saturation)
+local gray200 = hsl.hslToHex(210, 0, 40 + config.brightness + config.fg_saturation)
+local gray300 = hsl.hslToHex(210, 0, 50 + config.brightness + config.fg_saturation)
+
+local white100 = hsl.hslToHex(35, 10 + config.fg_saturation, 65 + config.brightness)
+local white400 = hsl.hslToHex(25, 10 + config.fg_saturation, 70 + config.brightness)
+
+local yellow100 = hsl.hslToHex(25, 20 + config.fg_saturation, 60 + config.brightness)
+
+local orange100 = hsl.hslToHex(25, 50 + config.fg_saturation, 60 + config.brightness)
+
+local bgColor = hsl.hslToHex(260, 10 + config.bg_saturation, 15 + config.brightness)
+local bgColorNC = hsl.hslToHex(260, 10 + config.bg_saturation, 18 + config.brightness)
+local bgColorDark = hsl.hslToHex(260, 0 + config.bg_saturation, 12 + config.brightness)
 
 local bgColorlessColor = config.transparent and "nil" or hsl.hslToHex(260, 0, 12 + config.brightness)
 local bgColorlessNC = hsl.hslToHex(260, 0, 16 + config.brightness)

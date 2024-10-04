@@ -6,6 +6,8 @@ local default = {
   dim_inactive = false,
   brightness = 0,
   selected_tab_highlight = true,
+  fg_saturation = 0,
+  bg_saturation = 0
 }
 
 M.current = default
