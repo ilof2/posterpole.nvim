@@ -1,5 +1,10 @@
-# Posterpole.nvim
-Simple nvim theme with pastel colors which try to emulate an old retro poster vibe
+<h1 align="center" valign="middle" >
+  <sup>Posterpole.nvim</sup> 
+</h1>
+<p align="center">Simple nvim theme with pastel colors which try to emulate an old retro poster vibe</p>
+
+![Screenshot 2024-10-04 at 11 38 53(1)](https://github.com/user-attachments/assets/6dbcf965-9137-462d-8ae0-d08dec9f00b4)
+
 
 ### Color background
 <img width="1896" alt="image" src="https://github.com/user-attachments/assets/1bc4b905-b671-4979-acc6-4975151db53f">
