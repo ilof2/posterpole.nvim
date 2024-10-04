@@ -60,11 +60,11 @@ local yellow100 = hsl.hslToHex(25, 20, 60 + config.brightness)
 local orange100 = hsl.hslToHex(25, 50, 60 + config.brightness)
 
 local bgColor = hsl.hslToHex(260, 10, 15 + config.brightness)
-local bgColorNC = hsl.hslToHex(260, 10, 17 + config.brightness)
+local bgColorNC = hsl.hslToHex(260, 10, 18 + config.brightness)
 local bgColorDark = hsl.hslToHex(260, 0, 12 + config.brightness)
 
 local bgColorlessColor = config.transparent and "nil" or hsl.hslToHex(260, 0, 12 + config.brightness)
-local bgColorlessNC = hsl.hslToHex(260, 0, 15 + config.brightness)
+local bgColorlessNC = hsl.hslToHex(260, 0, 16 + config.brightness)
 local bgColorlessDark = hsl.hslToHex(15, 4, 9 + config.brightness)
 
 local Variable = white100
@@ -159,6 +159,8 @@ local basic_highlights = {
   LineNr = { fg = gray100 },
   StatusLine = { fg = green100 },
   StatusLineNC = { fg = green100, bg = bgColorNC },
+  TabLine = { fg = white100, bg = config.selected_tab_highlight and bgColorNC or bg }, -- Tab title
+  TabLineSel = {fg = green100, bg = bg}, -- Curent tab title
 
   ["@variable"] = { fg = Variable },
   LspSignatureActiveParameter = { gui = "underline" }

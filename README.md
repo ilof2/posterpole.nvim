@@ -30,6 +30,7 @@ require("posterpole").setup({
   colorless_bg = false, -- grayscale or not
   dim_inactive = false,
   brightness = 0, -- negative numbers - darker, positive - lighter
+  selected_tab_highlight = false, --highlight current selected tab
 })
 ```
 
