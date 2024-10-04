@@ -5,14 +5,7 @@
 
 ![Screenshot 2024-10-04 at 11 38 53(1)](https://github.com/user-attachments/assets/6dbcf965-9137-462d-8ae0-d08dec9f00b4)
 
-
-### Color background
-<img width="1896" alt="image" src="https://github.com/user-attachments/assets/1bc4b905-b671-4979-acc6-4975151db53f">
-
-### Colorless background
-><img width="1896" alt="image" src="https://github.com/user-attachments/assets/09b7156a-50e3-4c3b-9596-8b67a977cb15">
-
-This theme does not pretend to be the most customizable or best one, it's was created because I can't find a suitable one for me.
+This theme does not pretend to be the most customizable or best one, it was created because I can't find a suitable one for me.
 
 ## Installation:
 Lazy:
