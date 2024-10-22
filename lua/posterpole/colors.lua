@@ -23,7 +23,7 @@ end
 local hsl = require("posterpole.hsl")
 
 local red100 = hsl.hslToHex(360, 25 + config.fg_saturation, 55 + config.brightness)
-local red400 = hsl.hslToHex(360, 25, 70 + config.fg_saturation + config.brightness)
+local red400 = hsl.hslToHex(360, 25 + config.fg_saturation, 70 + config.brightness)
 
 local deepRed100 = hsl.hslToHex(0, 30 + config.fg_saturation, 30 + config.brightness)
 local deepRed300 = hsl.hslToHex(0, 30 + config.fg_saturation, 40 + config.brightness)
@@ -49,6 +49,7 @@ local purple200 = hsl.hslToHex(284, 20 + config.fg_saturation, 50 + config.brigh
 local black200 = hsl.hslToHex(250, 5 + config.fg_saturation, 18 + config.brightness)
 
 local gray100 = hsl.hslToHex(210, 0, 30 + config.brightness + config.fg_saturation)
+
 local gray200 = hsl.hslToHex(210, 0, 40 + config.brightness + config.fg_saturation)
 local gray300 = hsl.hslToHex(210, 0, 50 + config.brightness + config.fg_saturation)
 
@@ -57,7 +58,9 @@ local white400 = hsl.hslToHex(25, 10 + config.fg_saturation, 70 + config.brightn
 
 local yellow100 = hsl.hslToHex(25, 20 + config.fg_saturation, 60 + config.brightness)
 
-local orange100 = hsl.hslToHex(25, 50 + config.fg_saturation, 60 + config.brightness)
+local orange100 = hsl.hslToHex(25, 45 + config.fg_saturation, 60 + config.brightness)
+
+local cyan100 = hsl.hslToHex(174, 10 + config.fg_saturation, 60 + config.brightness)
 
 local bgColor = hsl.hslToHex(260, 10 + config.bg_saturation, 15 + config.brightness)
 local bgColorNC = hsl.hslToHex(260, 10 + config.bg_saturation, 18 + config.brightness)
@@ -91,8 +94,8 @@ local fg = red100
 
 
 local basic_highlights = {
-  Normal = { bg = config.colorless_bg and bgColorless or bg, fg = yellow100 },
-  NormalNC = { bg = bgInactive, fg = yellow100 },
+  Normal = { bg = config.colorless_bg and bgColorless or bg, fg = white100},
+  NormalNC = { bg = bgInactive, fg = white100 },
   EndOfBuffer = { bg = config.colorless_bg and bgColorless or bg, fg = gray200 },
   Function = { fg = blue100, gui = "bold" },
   Boolean = { fg = purple100 },                -- boolean constants
@@ -145,9 +148,10 @@ local basic_highlights = {
   Search = { fg = "black", bg = red100 },
   NvimInternalError = { bg = red100, fg = "black" },
   QuickFixLine = { fg = orange100 },
-  Directory = { fg = red400 },
+  Directory = { fg = cyan100 },
   MoreMsg = { fg = blue200 },
   WinBar = { fg = fg, bg = nil },
+  WinBarNC = { fg = fg, bg = nil},
   NormalFloat = { fg = white100, bg = nil },
   DiagnosticUnderlineError = { gui = "underline" },
   DiagnosticUnderlineWarn = { gui = "underline" },
@@ -161,8 +165,16 @@ local basic_highlights = {
   StatusLineNC = { fg = green100, bg = bgColorNC },
   TabLine = { fg = white100, bg = config.selected_tab_highlight and bgColorNC or bg }, -- Tab title
   TabLineSel = {fg = green100, bg = bg}, -- Curent tab title
-
+}
+local treesitter = {
   ["@variable"] = { fg = Variable },
+  ["@variable.member"] = { fg = white100 },
+  ["@function.call"] = { fg = blue100, gui="bold"},
+  ["@function"] = { fg = blue100, gui="bold"},
+  ["@property"] = { fg = yellow100 },
+}
+
+local lsp = {
   LspSignatureActiveParameter = { gui = "underline" }
 }
 
@@ -176,17 +188,87 @@ local render_markdown_highlights = {
   RenderMarkdownCode = { bg = config.colorless_bg and bgColorlessDark or bgColorDark },
 }
 
+local neotest_highlights = {
+  NeotestPassed = { fg = green100 },
+  NeotestFailed = { fg = red100 },
+  NeotestRunning = { fg = orange100, gui = "bold" },
+  NeotestSkipped = { fg = gray200 },
+  -- NeotestNamespace
+  NeotestFocused = { fg = yellow100, gui = "underline"},
+  NeotestFile = { fg = white100 },
+  NeotestDir = { fg = cyan100 },
+  -- NeotestIndent
+  -- NeotestExpandMarker
+  NeotestAdapterName = { fg = red100 },
+  -- NeotestWinSelect
+  -- NeotestMarked
+  -- NeotestTarget
+  NeotestWatching = { fg = purple100 },
+}
+
 local dap_ui_highlights = {
   debugPC = { bg = deepRed100 },
   DapUIDecoration = { fg = red100 },
   DapUIFloatBorder = { fg = red100 },
-  -- SDapUINormalNC = {bg = gray100},
-  -- SDapUINormal = {bg = gray100},
+  DapUIWatchesEmpty = { fg = red100 },
+  DapUIWatchesError = { fg = red100 },
+  DapUIStop = { fg = red100 },
+  DapUIStopNC = { fg = red100 },
+  DapUIModifiedValue = { fg = yellow100, gui = "bold" },
+  DapUIStoppedThread = { fg = yellow100 },
+  DapUIWatchesValue = { fg = orange100 },
+  DapUIStepOver = { fg = cyan100 },
+  DapUIStepInto = { fg = cyan100 },
+  DapUIStepBack = { fg = cyan100 },
+  DapUIStepOut = { fg = cyan100 },
+
+  DapUIStepOverNC = { fg = cyan100 },
+  DapUIStepIntoNC = { fg = cyan100 },
+  DapUIStepBackNC = { fg = cyan100 },
+  DapUIStepOutNC = { fg = cyan100 },
+  DapUIBreakpointsPath = { fg = cyan100 },
+  DapUILineNumber = { fg = cyan100 },
+  DapUIScope = { fg = cyan100 },
+  DapUIWinSelect = { fg = cyan100, gui = "bold" },
+  DapUIType = basic_highlights.Type,
+  DapUISource = basic_highlights.Type,
+  DapUIBreakpointsInfo = { fg = green100 },
+  DapUIBreakpointsCurrentLine = { fg = green100, gui = "bold" },
+  DapUIThread = { fg = green100 },
+
+  DapUIPlayPause = { fg = green100 },
+  DapUIRestart = { fg = green100, gui = "bold" },
+
+  DapUIPlayPauseNC = { fg = green100 },
+  DapUIRestartNC = { fg = green100 },
+  DapBreakpoint = { fg = red400 },
+}
+
+local neotree_highlights = {
+
+  -- NeoTreeFileNameOpened
+  -- NeoTreeRootName
+  NeoTreeModified = { fg =  cyan100 },
+  NeoTreeGitAdded = { fg = deepRed100 },
+  NeoTreeGitDeleted = { fg = red100 },
+  NeoTreeGitModified = { fg = yellow100 },
+  NeoTreeGitConflict = { fg = Warning },
+  NeoTreeGitUntracked = { fg = purple100 },
+}
+
+local trouble_highlights = {
+  TroubleCount = { fg = green100 }
 }
 
 M.set_all = function()
   set_highlights(basic_highlights)
+  set_highlights(treesitter)
+  set_highlights(lsp)
+
   set_highlights(dap_ui_highlights)
+  set_highlights(neotest_highlights)
+  set_highlights(neotree_highlights)
+  set_highlights(trouble_highlights)
   set_highlights(render_markdown_highlights)
 end
 

@@ -1,5 +1,16 @@
 M = {}
 
+
+---@class PosterpoleConfig
+---@field transparent? boolean
+---@field colorless_bg? boolean
+---@field dim_inactive? boolean
+---@field brightness? integer
+---@field selected_tab_highlight? boolean
+---@field fg_saturation? integer
+---@field bg_saturation? integer
+
+---@type PosterpoleConfig
 local default = {
   transparent = false,
   colorless_bg = false,

@@ -42,6 +42,9 @@ require("posterpole").setup({
 * [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 * [mini.files](https://github.com/echasnovski/mini.files)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [trouble.nvim](https://github.com/folke/trouble.nvim)
+* [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+* [neotest](https://github.com/nvim-neotest/neotest)
 
 ## Plans
 1. Terminal colors. (Now work as expected only with `termguicolors = true`)
