@@ -66,7 +66,7 @@ local bgColor = hsl.hslToHex(260, 10 + config.bg_saturation, 15 + config.brightn
 local bgColorNC = hsl.hslToHex(260, 10 + config.bg_saturation, 18 + config.brightness)
 local bgColorDark = hsl.hslToHex(260, 0 + config.bg_saturation, 12 + config.brightness)
 
-local bgColorlessColor = config.transparent and "nil" or hsl.hslToHex(260, 0, 12 + config.brightness)
+local bgColorlessColor = hsl.hslToHex(260, 0, 12 + config.brightness)
 local bgColorlessNC = hsl.hslToHex(260, 0, 16 + config.brightness)
 local bgColorlessDark = hsl.hslToHex(15, 4, 9 + config.brightness)
 
@@ -88,7 +88,7 @@ local Deleted = red100
 
 local bg = config.transparent and "nil" or bgColor
 local bgColorless = config.transparent and "nil" or bgColorlessColor
-local bgInactive = config.colorless_bg and (config.dim_inactive and bgColorlessNC or bgColorless) or (config.dim_inactive and bgColorNC or bgColor)
+local bgInactive = config.colorless_bg and (config.dim_inactive and bgColorlessNC or bgColorless) or (config.dim_inactive and bgColorNC or bg)
 
 local fg = red100
 
@@ -143,6 +143,8 @@ local basic_highlights = {
   Added = { fg = Added },
   Removed = { fg = Deleted },
   Changed = { fg = Changed },
+  Cursor = { gui = "inverse" },
+  lCursor = { gui = "inverse" },
   CurSearch = { fg = "black", bg = orange100 },
   CursorLine = { bg = CursorLine },
   Search = { fg = "black", bg = red100 },
@@ -260,6 +262,17 @@ local trouble_highlights = {
   TroubleCount = { fg = green100 }
 }
 
+local mini_statusline_highlights = {
+  MiniStatuslineModeVisual = { fg = black200, bg=orange100 },
+  MiniStatuslineModeInsert = { fg = black200, bg=green100 },
+  MiniStatuslineModeCommand = { fg = black200, bg=cyan100 },
+  MiniStatuslineModeNormal = { fg = black200, bg=yellow100 },
+  MiniStatuslineFileinfo = { fg = green100, bg=config.colorless_bg and bgColor or bgColorlessColor},
+  MiniStatuslineDevinfo = { fg = green100, bg=config.colorless_bg and bgColor or bgColorlessColor},
+  MiniStatuslineFilename = { fg = green100, bg=config.colorless_bg and bgColorless or bg},
+  MiniStatuslineInactive = { fg = green100, bg=config.colorless_bg and bgColorless or bg},
+}
+
 M.set_all = function()
   set_highlights(basic_highlights)
   set_highlights(treesitter)
@@ -270,6 +283,7 @@ M.set_all = function()
   set_highlights(neotree_highlights)
   set_highlights(trouble_highlights)
   set_highlights(render_markdown_highlights)
+  set_highlights(mini_statusline_highlights)
 end
 
 return M
