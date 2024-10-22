@@ -2,6 +2,7 @@ local config = require("posterpole.config")
 
 local M = {}
 
+---@param user_opts? PosterpoleConfig
 M.setup = function(user_opts)
   if user_opts then config.set(user_opts) end
 end
