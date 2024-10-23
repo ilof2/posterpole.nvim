@@ -9,7 +9,7 @@ end
 
 M._colorscheme = function ()
 
-  local posterpole = require("posterpole.colors")
+  local posterpole = require("posterpole.highlighs")
   posterpole.clear_hl()
 
   vim.g.colors_name = "posterpole"
