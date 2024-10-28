@@ -11,6 +11,7 @@ M.plugins = {
   plugins.neotree,
   plugins.trouble,
   plugins.mini_status,
+  plugins.lsp,
 }
 
 M.basic_highlights = basic
