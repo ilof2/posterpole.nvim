@@ -29,7 +29,7 @@ function M.setup(palette, config)
     PreProc = { fg = palette.fg },                       -- (preferred) generic preprocessor
     Define = { fg = palette.fg },                        -- preprocessor '#define'
     Include = { fg = palette.fg },                       -- preprocessor '#include'
-    Macro = { fg = colors.mainPink },                    -- macros
+    Macro = { fg = colors.mainPurple },                  -- macros
     PreCondit = { fg = palette.fg },                     -- preprocessor conditionals '#if', '#endif' etc
     Special = { fg = colors.mainYellow },                -- (preferred) any special symbol
     SpecialChar = { fg = palette.fg },                   -- special character in a constant
