@@ -43,7 +43,7 @@ function M.setup(palette, config)
     StorageClass = { fg = colors.mainBlue },             -- 'static', 'volatile' etc
     Structure = { fg = colors.mainBlue },                -- 'struct', 'union', 'enum' etc
     Typedef = { fg = colors.mainBlue },                  -- 'typedef'
-    Todo = { fg = "black", bg = colors.mainPurple },     -- (preferred) 'TODO' keywords in comments
+    Todo = { fg = "black", bg = colors.mainCyan },     -- (preferred) 'TODO' keywords in comments
     DiffAdd = { bg = colors.deepGreen1 },
     DiffDelete = { fg = colors.mainWhite, bg = colors.deepRed1 },
     DiffText = { bg = colors.brightGreen2 },
@@ -52,7 +52,9 @@ function M.setup(palette, config)
     DiagnosticWarn = { fg = colors.mainOrange },
     DiagnosticInfo = { fg = colors.mainWhite },
     DiagnosticHint = { fg = colors.mainBlue },
-    DiagnosticOk = { fg = colors.deepGreen1 },
+    DiagnosticOk = { fg = colors.mainGreen },
+    WarningMsg = { fg = colors.mainOrange, force = true },
+    ErrorMsg = { fg = colors.mainRed, force = true },
     Added = { fg = colors.mainGreen },
     Removed = { fg = colors.mainRed },
     Changed = { fg = colors.mainOrange },
@@ -65,6 +67,7 @@ function M.setup(palette, config)
     QuickFixLine = { fg = colors.mainOrange },
     Directory = { fg = colors.mainCyan },
     MoreMsg = { fg = colors.blue2 },
+    ModeMsg = { link = "String" },
     WinBar = { fg = palette.fg, bg = nil },
     WinBarNC = { fg = palette.fg, bg = nil},
     NormalFloat = { fg = colors.mainWhite, bg = nil },
@@ -78,8 +81,8 @@ function M.setup(palette, config)
     LineNr = { fg = colors.mainGray },
     StatusLine = { fg = colors.mainGreen },
     StatusLineNC = { fg = colors.mainGreen, bg = colors.bgColorNC },
-    TabLine = { fg = colors.mainWhite, bg = config.selected_tab_highlight and colors.bgColorNC or palette.bg }, -- Tab title
-    TabLineSel = {fg = colors.mainGreen, bg = palette.bg}, -- Curent tab title
+    TabLine = { fg = colors.mainGreen, bg = config.selected_tab_highlight and colors.bgColorNC or palette.bg }, -- Tab title
+    TabLineSel = {fg = colors.mainWhite, bg = palette.bg}, -- Curent tab title
   }
 end
 return M
