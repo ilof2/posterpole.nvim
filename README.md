@@ -6,6 +6,8 @@
 ![Screenshot 2024-10-04 at 11 38 53(1)](https://github.com/user-attachments/assets/6dbcf965-9137-462d-8ae0-d08dec9f00b4)
 
 This theme does not pretend to be the most customizable or best one, it was created because I can't find a suitable one for me.
+## Other implementations
+- [Posterpole org](https://github.com/posterpole)
 
 ## Installation:
 Lazy:
@@ -48,7 +50,7 @@ require("posterpole").setup({
 
 ## Plans
 1. Terminal colors. (Now work as expected only with `termguicolors = true`)
-2. Add extra options to change colors and contrast
+2. Add extra options to change colors
 3. New theme variants
 
 ## Inspiration
