@@ -7,7 +7,17 @@
 
 This theme does not pretend to be the most customizable or best one, it was created because I can't find a suitable one for me.
 ## Other implementations
-- [Posterpole org](https://github.com/posterpole)
+#### [Posterpole Repo](https://github.com/posterpole)
+- [Alacritty](https://github.com/posterpole/alacritty)
+- [VScode](https://github.com/posterpole/vscode) (release soon)
+- Wezterm (WIP)
+
+## Features
+- 🪟 Transparency
+- 🎨 Color/colorless bg variants
+- ☀︎  Configurable brightness and saturation
+- 👾 `posterpole-term` variant which can be used in <br>
+terminals without `$TERM=xterm-256color` support ( Macos terminal for example )
 
 ## Installation:
 Lazy:
@@ -20,6 +30,10 @@ Lazy:
       -- config here
     })
     vim.cmd("colorscheme posterpole")
+
+    -- if you need colorscheme without termguicolors support
+    -- This variant set termguicolors to false, be aware of using it
+    -- vim.cmd("colorscheme posterpole-term")
   end
 }
 ```
@@ -47,15 +61,19 @@ require("posterpole").setup({
 * [trouble.nvim](https://github.com/folke/trouble.nvim)
 * [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 * [neotest](https://github.com/nvim-neotest/neotest)
+* [cmp](https://github.com/hrsh7th/nvim-cmp)
+* [lua-fzf](https://github.com/ibhagwan/fzf-lua)
+* [aerial](https://github.com/stevearc/aerial.nvim)
 
 ## Plans
-1. Terminal colors. (Now work as expected only with `termguicolors = true`)
-2. Add extra options to change colors
-3. New theme variants
+1. Add extra options to change colors
+2. More plugins support
+3. Adaptive colors support
 
 ## Inspiration
 * [vague.nvim](https://github.com/vague2k/vague.nvim)
 * [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+* builtin habamax
 
 ## Known issues
 1. Color scheme with `dim_inactive=true` and `transparent=true` looks crappy.
