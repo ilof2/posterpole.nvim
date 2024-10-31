@@ -1,1 +1,1 @@
-require("posterpole")._colorscheme()
+require("posterpole")._colorscheme("posterpole")
