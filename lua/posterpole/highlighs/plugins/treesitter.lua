@@ -11,7 +11,7 @@ function M.setup(palette, config)
     ["@variable.member"] = { fg = colors.mainWhite },
     ["@function.call"] = { fg = colors.mainBlue, bold = true},
     ["@function"] = { fg = colors.mainBlue, bold = true},
-    ["@property"] = { fg = colors.mainPurple },
+    ["@property"] = { fg = colors.mainYellow },
 
     ["@attribute.builtin.python"] = { link = "Macro" },
 
