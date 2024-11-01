@@ -1,11 +1,20 @@
+<div align="center"><img src="https://github.com/user-attachments/assets/5bd3b37f-58ed-4fb8-a7de-3e43ce31812b" width=150, height=150></div>
 <h1 align="center" valign="middle" >
   <sup>Posterpole.nvim</sup> 
 </h1>
 <p align="center">Simple nvim theme with pastel colors which try to emulate an old retro poster vibe</p>
+<p align="center">
+<img alt="Stars" src="https://img.shields.io/github/stars/ilof2/posterpole.nvim?style=for-the-badge&labelColor=%2324222A&color=%23C5916B">
+<img alt="Issues" src="https://img.shields.io/github/issues/ilof2/posterpole.nvim?style=for-the-badge&labelColor=%2324222A&color=%23A86F6F">
+<img alt="Commit activity" src="https://img.shields.io/github/commit-activity/w/ilof2/posterpole.nvim?style=for-the-badge&labelColor=%2324222A&color=%23728C7B">
+</p>
 
-![Screenshot 2024-10-04 at 11 38 53(1)](https://github.com/user-attachments/assets/6dbcf965-9137-462d-8ae0-d08dec9f00b4)
+## Main theme
+<img width="1896" alt="Screenshot 2024-11-01 at 15 38 12" src="https://github.com/user-attachments/assets/957eb9fe-fe66-4f1f-8e4e-da43f5830e0f">
 
-This theme does not pretend to be the most customizable or best one, it was created because I can't find a suitable one for me.
+## Posterpole-term theme
+<img width="1896" alt="Screenshot 2024-11-01 at 15 37 56" src="https://github.com/user-attachments/assets/299eac64-dc7b-4854-8de9-9c6f67afc592">
+
 ## Other implementations
 #### [Posterpole Repo](https://github.com/posterpole)
 - [Alacritty](https://github.com/posterpole/alacritty)
