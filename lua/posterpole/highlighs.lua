@@ -16,7 +16,6 @@ end
 ---@param highlights table <string, table>
 local function set_term_highlights(highlights)
 	for name, setting in pairs(highlights) do
-		-- TODO: Should be setted in all highlights
 		setting.ctermfg = setting.fg
 		setting.ctermbg = setting.bg
 		setting.fg = ""
@@ -28,7 +27,6 @@ end
 ---@param highlights table <string, table>
 local function set_highlights(highlights)
 	for name, setting in pairs(highlights) do
-		-- TODO: Should be setted in all highlights
 		vim.api.nvim_set_hl(0, name, setting)
 	end
 end
