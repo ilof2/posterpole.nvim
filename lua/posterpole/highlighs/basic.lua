@@ -32,7 +32,7 @@ function M.setup(palette, config)
 		Macro = { fg = colors.mainPurple }, -- macros
 		PreCondit = { fg = palette.fg }, -- preprocessor conditionals '#if', '#endif' etc
 		Special = { fg = colors.mainYellow }, -- (preferred) any special symbol
-		SpecialChar = { fg = palette.fg }, -- special character in a constant
+		SpecialChar = { link = "Special" }, -- special character in a constant
 		Delimiter = { fg = colors.mainWhite }, -- special character in a constant
 		SpecialComment = { fg = palette.fg }, -- special things inside comments
 		Tag = { fg = palette.fg }, -- can use <C-]> on this
@@ -85,4 +85,5 @@ function M.setup(palette, config)
 		TabLineSel = { fg = colors.mainWhite, bg = palette.bg }, -- Curent tab title
 	}
 end
+
 return M

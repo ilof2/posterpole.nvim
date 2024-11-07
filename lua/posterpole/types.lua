@@ -1,0 +1,59 @@
+--- Main theme config
+---@class PosterpoleConfig
+---@field transparent? boolean
+---@field colorless_bg? boolean
+---@field dim_inactive? boolean
+---@field brightness? integer
+---@field selected_tab_highlight? boolean
+---@field fg_saturation? integer
+---@field bg_saturation? integer
+---@field colors? PaletteColors
+
+--- Colors which are used in posterpole-term theme variant
+---@class TermColors
+---@field mainGray? integer
+---@field mainBlack? integer
+---@field mainYellow? integer
+---@field mainOrange? integer
+---@field mainWhite? integer
+---@field mainGreen? integer
+---@field mainCyan? integer
+---@field mainBlue? integer
+---@field mainPurple? integer
+---@field mainPink? integer
+---@field mainRed? integer
+---@field deepRed? integer
+---@field deepGreen? integer
+---@field brightGreen? integer
+---@field brightGray? integer
+---@field bgColor? integer
+---@field bgColorNC? integer
+---@field bgDarkColor? integer
+---@field bgDarkColorless? integer
+---@field bgColorlessColor? integer
+---@field bgColorlessNC? integer
+
+
+--- GUI colors
+---@class Colors
+---@field mainGray? string
+---@field mainBlack? string
+---@field mainYellow? string
+---@field mainOrange? string
+---@field mainWhite? string
+---@field mainGreen? string
+---@field mainCyan? string
+---@field mainBlue? string
+---@field mainPurple? string
+---@field mainPink? string
+---@field mainRed? string
+---@field deepRed? string
+---@field deepGreen? string
+---@field brightGreen? string
+---@field brightGray? string
+---@field bgColor? string
+---@field bgColorNC? string
+---@field bgDarkColor? string
+---@field bgDarkColorless? string
+---@field bgColorlessColor? string
+---@field bgColorlessNC? string

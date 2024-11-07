@@ -6,7 +6,10 @@ local M = {}
 ---@param variant string
 ---@return Palette
 function M.setup(variant)
+
 	---@class PaletteColors
+	---@field posterpole_term? TermColors
+	---@field posterpole? Colors
 	local variants = {
 		posterpole_term = {
 			mainGray = 240,
@@ -65,7 +68,9 @@ function M.setup(variant)
 		},
 	}
 
+	variants = vim.tbl_deep_extend("force", vim.deepcopy(variants), config.colors)
 	local colors = variants[variant]
+
 	-- transparent
 	local bg = config.transparent and "" or colors.bgColor
 	local bgColorless = config.transparent and "" or colors.bgColorlessColor
