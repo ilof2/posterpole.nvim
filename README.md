@@ -89,7 +89,7 @@ You can override all colors that are used in colorscheme
 - [256 color cheat sheet](https://www.ditig.com/publications/256-colors-cheat-sheet)
 - [xterm256 color picker](https://michurin.github.io/xterm256-color-picker/)
 
-Colors list which can be overritten:
+Colors list which can be overwritten:
 
 ```lua
 {
