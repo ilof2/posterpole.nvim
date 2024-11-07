@@ -85,4 +85,5 @@ function M.setup(palette, config)
 		TabLineSel = { fg = colors.mainWhite, bg = palette.bg }, -- Curent tab title
 	}
 end
+
 return M
