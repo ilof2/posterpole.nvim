@@ -6,7 +6,6 @@ local M = {}
 ---@param variant string
 ---@return Palette
 function M.setup(variant)
-
 	---@class PaletteColors
 	---@field posterpole_term? TermColors
 	---@field posterpole? Colors
@@ -37,6 +36,17 @@ function M.setup(variant)
 			bgDarkColorless = 234,
 			bgColorlessColor = 234,
 			bgColorlessNC = 239,
+
+      --builtin term bright colors
+      --TODO: not work, need to translate integer in hex
+      brightTermBlack = 241,
+      brightTermBlue = 110,
+      brightTermCyan = 73,
+      brightTermGreen = 108,
+      brightTermMagenta = 104,
+      brightTermRed = 167,
+      brightTermWhite = 253,
+      brightTermYellow = 186,
 		},
 		posterpole = {
 			-- main colors
@@ -65,6 +75,16 @@ function M.setup(variant)
 			bgDarkColorless = hsl.hslToHex(260, 0, 12 + config.brightness),
 			bgColorlessColor = hsl.hslToHex(260, 0, 12 + config.brightness),
 			bgColorlessNC = hsl.hslToHex(260, 0, 16 + config.brightness),
+
+      --builtin term bright colors
+      brightTermBlack = hsl.hslToHex(0, 5 + config.fg_saturation, 28 + config.brightness),
+      brightTermBlue = hsl.hslToHex(210, 15 + config.fg_saturation, 60 + config.brightness),
+      brightTermCyan = hsl.hslToHex(174, 10 + config.fg_saturation, 60 + config.brightness),
+      brightTermGreen = hsl.hslToHex(140, 10 + config.fg_saturation, 60 + config.brightness),
+      brightTermMagenta = hsl.hslToHex(284, 15 + config.fg_saturation, 55 + config.brightness),
+      brightTermRed = hsl.hslToHex(360, 25 + config.fg_saturation, 65 + config.brightness),
+      brightTermWhite = hsl.hslToHex(35, 10 + config.fg_saturation, 75 + config.brightness),
+      brightTermYellow = hsl.hslToHex(25, 45 + config.fg_saturation, 70 + config.brightness),
 		},
 	}
 

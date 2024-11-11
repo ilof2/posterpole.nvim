@@ -32,6 +32,14 @@
 ---@field bgDarkColorless? integer
 ---@field bgColorlessColor? integer
 ---@field bgColorlessNC? integer
+---@field brightTermBlack? integer
+---@field brightTermBlue? integer
+---@field brightTermCyan? integer
+---@field brightTermGreen? integer
+---@field brightTermMagenta? integer
+---@field brightTermRed? integer
+---@field brightTermWhite? integer
+---@field brightTermYellow? integer
 
 
 --- GUI colors
@@ -57,3 +65,11 @@
 ---@field bgDarkColorless? string
 ---@field bgColorlessColor? string
 ---@field bgColorlessNC? string
+---@field brightTermBlack? string
+---@field brightTermBlue? string
+---@field brightTermCyan? string
+---@field brightTermGreen? string
+---@field brightTermMagenta? string
+---@field brightTermRed? string
+---@field brightTermWhite? string
+---@field brightTermYellow? string

@@ -31,9 +31,38 @@ local function set_highlights(highlights)
 	end
 end
 
-M.set_all = function(variant)
+---@param palette Palette
+local function set_terminal_colors(palette, variant)
+  if (variant == "posterpole-term") then
+    -- TODO: in the future need to translate xterm color code into the hex
+    return
+  end
+  local colors = palette.colors
+
+  vim.g.terminal_color_0 = colors.mainBlack
+  vim.g.terminal_color_1 = colors.mainRed
+  vim.g.terminal_color_2 = colors.mainGreen
+  vim.g.terminal_color_3 = colors.mainOrange
+  vim.g.terminal_color_4 = colors.mainBlue
+  vim.g.terminal_color_5 = colors.mainPurple
+  vim.g.terminal_color_6 = colors.mainCyan
+  vim.g.terminal_color_7 = colors.mainWhite
+  vim.g.terminal_color_8 = colors.brightTermBlack
+  vim.g.terminal_color_9 = colors.brightTermRed
+  vim.g.terminal_color_10 = colors.brightTermGreen
+  vim.g.terminal_color_11 = colors.brightTermYellow
+  vim.g.terminal_color_12 = colors.brightTermBlue
+  vim.g.terminal_color_13 = colors.brightTermMagenta
+  vim.g.terminal_color_14 = colors.brightTermCyan
+  vim.g.terminal_color_15 = colors.brightTermWhite
+  vim.g.terminal_color_background = palette.bg
+  vim.g.terminal_color_foreground = colors.mainWhite
+end
+
+M.set_all = function(palette, variant, config)
 	M.variant = variant
 	M.set_termguicolors()
+  vim.background = "dark"
 
 	local plugins = require("posterpole.highlighs.plugins.init")
 	local basic = require("posterpole.highlighs.basic")
@@ -55,8 +84,7 @@ M.set_all = function(variant)
 	}
 
 	all_hl.basic_highlights = basic
-	local palette = require("posterpole.colors").setup(variant)
-	local config = require("posterpole.config").current
+  set_terminal_colors(palette, variant)
 	local set_hl = variant == "posterpole_term" and set_term_highlights or set_highlights
 
 	set_hl(all_hl.basic_highlights.setup(palette, config))
