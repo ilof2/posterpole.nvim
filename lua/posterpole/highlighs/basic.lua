@@ -44,10 +44,18 @@ function M.setup(palette, config)
 		Structure = { fg = colors.mainBlue }, -- 'struct', 'union', 'enum' etc
 		Typedef = { fg = colors.mainBlue }, -- 'typedef'
 		Todo = { fg = "black", bg = colors.mainCyan }, -- (preferred) 'TODO' keywords in comments
+
+		Added = { fg = colors.mainGreen },
+		Removed = { fg = colors.mainRed },
+		Changed = { fg = colors.mainOrange },
 		DiffAdd = { bg = colors.deepGreen },
 		DiffDelete = { fg = colors.mainWhite, bg = colors.deepRed },
 		DiffText = { bg = colors.brightGreen },
 		DiffChange = { bg = colors.brightGreen },
+		DiffAdded = { link = "Added" },
+		DiffRemoved = { link = "Removed" },
+		DiffChanged = { link = "Changed" },
+
 		DiagnosticError = { fg = colors.deepRed },
 		DiagnosticWarn = { fg = colors.mainOrange },
 		DiagnosticInfo = { fg = colors.mainWhite },
@@ -55,9 +63,6 @@ function M.setup(palette, config)
 		DiagnosticOk = { fg = colors.mainGreen },
 		WarningMsg = { fg = colors.mainOrange, force = true },
 		ErrorMsg = { fg = colors.mainRed, force = true },
-		Added = { fg = colors.mainGreen },
-		Removed = { fg = colors.mainRed },
-		Changed = { fg = colors.mainOrange },
 		Cursor = { reverse = true },
 		lCursor = { reverse = true },
 		CurSearch = { fg = "black", bg = colors.mainOrange },
