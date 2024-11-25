@@ -5,11 +5,10 @@ local M = {}
 ---@return table
 function M.setup(palette, config)
 	local colors = palette.colors
-
 	return {
-		Normal = { bg = config.colorless_bg and palette.bgColorless or palette.bg, fg = colors.mainWhite },
+		Normal = { bg = palette.bgNoBG, fg = colors.mainWhite },
 		NormalNC = { bg = palette.bgInactive, fg = colors.mainWhite },
-		EndOfBuffer = { bg = config.colorless_bg and palette.bgColorless or palette.bg, fg = colors.mainGray },
+		EndOfBuffer = { bg = palette.bgNoBG, fg = colors.mainGray },
 		Function = { fg = colors.mainBlue, bold = true },
 		Boolean = { fg = colors.mainPurple }, -- boolean constants
 		Character = { fg = colors.mainGreen }, -- character constants
@@ -66,7 +65,7 @@ function M.setup(palette, config)
 		Cursor = { reverse = true },
 		lCursor = { reverse = true },
 		CurSearch = { fg = "black", bg = colors.mainOrange },
-		CursorLine = { bg = colors.mainBlack },
+		CursorLine = { bg = colors.bgColorNC },
 		Search = { fg = "black", bg = colors.mainRed },
 		NvimInternalError = { bg = colors.mainRed, fg = "black" },
 		QuickFixLine = { fg = colors.mainOrange },
@@ -75,6 +74,7 @@ function M.setup(palette, config)
 		ModeMsg = { link = "String" },
 		WinBar = { fg = palette.fg, bg = nil },
 		WinBarNC = { fg = palette.fg, bg = nil },
+    WinSeparator = { fg = colors.mainGray, bg = nil },
 		NormalFloat = { fg = colors.mainWhite, bg = nil },
 		DiagnosticUnderlineError = { underline = true },
 		DiagnosticUnderlineWarn = { underline = true },
@@ -86,8 +86,8 @@ function M.setup(palette, config)
 		LineNr = { fg = colors.mainGray },
 		StatusLine = { fg = colors.mainGreen },
 		StatusLineNC = { fg = colors.mainGreen, bg = colors.bgColorNC },
-		TabLine = { fg = colors.mainGreen, bg = config.selected_tab_highlight and colors.bgColorNC or palette.bg }, -- Tab title
-		TabLineSel = { fg = colors.mainWhite, bg = palette.bg }, -- Curent tab title
+		TabLine = { fg = colors.mainGreen, bg = config.selected_tab_highlight and palette.bgDark or palette.bgNoBG }, -- Tab title
+		TabLineSel = { fg = colors.mainWhite, bg = config.colorless_bg and colors.bgColorlessNC or colors.bgColorNC }, -- Curent tab title
 	}
 end
 

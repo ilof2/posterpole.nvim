@@ -73,7 +73,7 @@ function M.setup(variant)
 			bgColorNC = hsl.hslToHex(260, 10 + config.bg_saturation, 18 + config.brightness),
 			bgDarkColor = hsl.hslToHex(260, 10 + config.bg_saturation, 14 + config.brightness),
 			bgDarkColorless = hsl.hslToHex(260, 0, 12 + config.brightness),
-			bgColorlessColor = hsl.hslToHex(260, 0, 12 + config.brightness),
+			bgColorlessColor = hsl.hslToHex(260, 0, 14 + config.brightness),
 			bgColorlessNC = hsl.hslToHex(260, 0, 16 + config.brightness),
 
       --builtin term bright colors
@@ -92,23 +92,34 @@ function M.setup(variant)
 	local colors = variants[variant]
 
 	-- transparent
-	local bg = config.transparent and "" or colors.bgColor
-	local bgColorless = config.transparent and "" or colors.bgColorlessColor
-	local bgDarkColorless = config.transparent and "" or colors.bgDarkColorless
-	local bgDarkColor = config.transparent and "" or colors.bgDarkColor
+	local bgColor = colors.bgColor
+	local bgColorless = colors.bgColorlessColor
+  local bg = config.colorless_bg and bgColorless or bgColor
+  local bgNoBG = config.transparent and "" or bg
+
+  -- dark
+	local bgDarkColorless = colors.bgDarkColorless
+	local bgDarkColor = colors.bgDarkColor
+  local bgDark = config.colorless_bg and bgDarkColorless or bgDarkColor
+  local bgDarkNoBG = config.transparent and "" or bgDark
 
 	-- inactive
-	local bgInactiveColor = config.dim_inactive and colors.bgColorNC or bg
-	local bgInactiveColorless = config.dim_inactive and colors.bgColorlessNC or bgColorless
+	local bgInactiveColor = config.dim_inactive and colors.bgColorNC or bgNoBG
+	local bgInactiveColorless = config.dim_inactive and colors.bgColorlessNC or bgNoBG
 	local bgInactive = config.colorless_bg and bgInactiveColorless or bgInactiveColor
+
 	---@class Palette
 	local palette = {
 		colors = colors,
-		bg = bg,
+		bgColor = bgColor,
+    bg = bg,
+    bgNoBG = bgNoBG,
 		fg = colors.mainRed,
 		bgColorless = bgColorless,
 		bgDarkColorless = bgDarkColorless,
 		bgDarkColor = bgDarkColor,
+    bgDark = bgDark,
+    bgDarkNoBG = bgDarkNoBG,
 		bgInactiveColor = bgInactiveColor,
 		bgInactiveColorless = bgInactiveColorless,
 		bgInactive = bgInactive,

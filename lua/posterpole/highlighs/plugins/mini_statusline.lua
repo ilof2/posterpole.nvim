@@ -13,8 +13,8 @@ function M.setup(palette, config)
     MiniStatuslineModeNormal = { fg = colors.mainBlack, bg=colors.mainYellow },
     MiniStatuslineFileinfo = { fg = colors.mainGreen, bg=config.colorless_bg and colors.bgColor or colors.bgColorlessColor},
     MiniStatuslineDevinfo = { fg = colors.mainGreen, bg=config.colorless_bg and colors.bgColor or colors.bgColorlessColor},
-    MiniStatuslineFilename = { fg = colors.mainGreen, bg=config.colorless_bg and palette.bgColorless or palette.bg},
-    MiniStatuslineInactive = { fg = colors.mainGreen, bg=config.colorless_bg and palette.bgColorless or palette.bg},
+    MiniStatuslineFilename = { fg = colors.mainGreen, bg=palette.bgNoBG},
+    MiniStatuslineInactive = { fg = colors.mainGreen, bg=palette.bgNoBG},
   }
 end
 

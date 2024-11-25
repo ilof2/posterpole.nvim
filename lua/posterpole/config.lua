@@ -9,6 +9,9 @@ local default = {
   selected_tab_highlight = true,
   fg_saturation = 0,
   bg_saturation = 0,
+  lualine = {
+    transparent = true
+  },
   colors = {},
 }
 

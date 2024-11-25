@@ -55,7 +55,7 @@ local function set_terminal_colors(palette, variant)
   vim.g.terminal_color_13 = colors.brightTermMagenta
   vim.g.terminal_color_14 = colors.brightTermCyan
   vim.g.terminal_color_15 = colors.brightTermWhite
-  vim.g.terminal_color_background = palette.bg
+  vim.g.terminal_color_background = palette.bgNoBG
   vim.g.terminal_color_foreground = colors.mainWhite
 end
 
@@ -66,29 +66,13 @@ M.set_all = function(palette, variant, config)
 
 	local plugins = require("posterpole.highlighs.plugins.init")
 	local basic = require("posterpole.highlighs.basic")
+  local hls = require("posterpole.highlighs.init")
 
-	local all_hl = {}
-
-	all_hl.plugins = {
-		plugins.dap_ui,
-		plugins.neotest,
-		plugins.treesitter,
-		plugins.render_md,
-		plugins.neotree,
-		plugins.trouble,
-		plugins.mini_status,
-		plugins.aerial,
-		plugins.fzf,
-		plugins.lsp,
-		plugins.cmp,
-	}
-
-	all_hl.basic_highlights = basic
   set_terminal_colors(palette, variant)
 	local set_hl = variant == "posterpole_term" and set_term_highlights or set_highlights
 
-	set_hl(all_hl.basic_highlights.setup(palette, config))
-	for _, highlighs in next, all_hl.plugins do
+	set_hl(basic.setup(palette, config))
+	for _, highlighs in next, hls.plugins do
 		set_hl(highlighs.setup(palette, config))
 	end
 end

@@ -2,7 +2,8 @@ local palette = vim.g.palette
 local config = require("posterpole.config").current
 local colors = palette.colors
 
-local bg = config.colorless_bg and palette.bgColorless or palette.bgDarkColor
+local bg = config.lualine.transparent and palette.bgNoBG or palette.bgDark
+
 local posterpole = {
   normal = {
     a = { fg = colors.mainBlack, bg = colors.brightGray },

@@ -1,3 +1,4 @@
+
 --- Main theme config
 ---@class PosterpoleConfig
 ---@field transparent? boolean
@@ -8,6 +9,11 @@
 ---@field fg_saturation? integer
 ---@field bg_saturation? integer
 ---@field colors? PaletteColors
+---@field lualine? LualineConfig
+---
+--- Lualine config
+---@class LualineConfig
+---@field transparent? boolean
 
 --- Colors which are used in posterpole-term theme variant
 ---@class TermColors

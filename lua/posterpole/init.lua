@@ -6,7 +6,7 @@ M._colorscheme = function(variant)
   vim.g.palette = palette
 
 	local posterpole = require("posterpole.highlighs")
-  local config = require("posterpole.config")
+  local config = require("posterpole.config").current
 
 
 	vim.g.colors_name = variant
