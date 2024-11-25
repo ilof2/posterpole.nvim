@@ -12,6 +12,7 @@ M.plugins = {
   plugins.trouble,
   plugins.mini_status,
   plugins.notify,
+  plugins.beacon,
   plugins.aerial,
   plugins.fzf,
   plugins.lsp,
