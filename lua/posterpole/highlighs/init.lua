@@ -14,6 +14,8 @@ M.plugins = {
   plugins.notify,
   plugins.beacon,
   plugins.aerial,
+  plugins.cmp,
+  plugins.blink_cmp,
   plugins.fzf,
   plugins.lsp,
 }
