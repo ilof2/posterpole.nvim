@@ -11,7 +11,11 @@ M.plugins = {
   plugins.neotree,
   plugins.trouble,
   plugins.mini_status,
+  plugins.notify,
+  plugins.beacon,
   plugins.aerial,
+  plugins.cmp,
+  plugins.blink_cmp,
   plugins.fzf,
   plugins.lsp,
 }

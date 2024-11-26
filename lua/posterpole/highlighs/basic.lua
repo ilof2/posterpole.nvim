@@ -5,11 +5,10 @@ local M = {}
 ---@return table
 function M.setup(palette, config)
 	local colors = palette.colors
-
 	return {
-		Normal = { bg = config.colorless_bg and palette.bgColorless or palette.bg, fg = colors.mainWhite },
+		Normal = { bg = palette.bgNoBG, fg = colors.mainWhite },
 		NormalNC = { bg = palette.bgInactive, fg = colors.mainWhite },
-		EndOfBuffer = { bg = config.colorless_bg and palette.bgColorless or palette.bg, fg = colors.mainGray },
+		EndOfBuffer = { bg = palette.bgNoBG, fg = colors.mainGray },
 		Function = { fg = colors.mainBlue, bold = true },
 		Boolean = { fg = colors.mainPurple }, -- boolean constants
 		Character = { fg = colors.mainGreen }, -- character constants
@@ -44,10 +43,18 @@ function M.setup(palette, config)
 		Structure = { fg = colors.mainBlue }, -- 'struct', 'union', 'enum' etc
 		Typedef = { fg = colors.mainBlue }, -- 'typedef'
 		Todo = { fg = "black", bg = colors.mainCyan }, -- (preferred) 'TODO' keywords in comments
+
+		Added = { fg = colors.mainGreen },
+		Removed = { fg = colors.mainRed },
+		Changed = { fg = colors.mainOrange },
 		DiffAdd = { bg = colors.deepGreen },
 		DiffDelete = { fg = colors.mainWhite, bg = colors.deepRed },
 		DiffText = { bg = colors.brightGreen },
 		DiffChange = { bg = colors.brightGreen },
+		DiffAdded = { link = "Added" },
+		DiffRemoved = { link = "Removed" },
+		DiffChanged = { link = "Changed" },
+
 		DiagnosticError = { fg = colors.deepRed },
 		DiagnosticWarn = { fg = colors.mainOrange },
 		DiagnosticInfo = { fg = colors.mainWhite },
@@ -55,13 +62,10 @@ function M.setup(palette, config)
 		DiagnosticOk = { fg = colors.mainGreen },
 		WarningMsg = { fg = colors.mainOrange, force = true },
 		ErrorMsg = { fg = colors.mainRed, force = true },
-		Added = { fg = colors.mainGreen },
-		Removed = { fg = colors.mainRed },
-		Changed = { fg = colors.mainOrange },
 		Cursor = { reverse = true },
 		lCursor = { reverse = true },
 		CurSearch = { fg = "black", bg = colors.mainOrange },
-		CursorLine = { bg = colors.mainBlack },
+		CursorLine = { bg = colors.bgColorNC },
 		Search = { fg = "black", bg = colors.mainRed },
 		NvimInternalError = { bg = colors.mainRed, fg = "black" },
 		QuickFixLine = { fg = colors.mainOrange },
@@ -70,19 +74,23 @@ function M.setup(palette, config)
 		ModeMsg = { link = "String" },
 		WinBar = { fg = palette.fg, bg = nil },
 		WinBarNC = { fg = palette.fg, bg = nil },
+		WinSeparator = { fg = colors.mainGray, bg = nil },
 		NormalFloat = { fg = colors.mainWhite, bg = nil },
 		DiagnosticUnderlineError = { underline = true },
 		DiagnosticUnderlineWarn = { underline = true },
 		DiagnosticUnderlineInfo = { underline = true },
 		DiagnosticUnderlineHint = { underline = true },
 		DiagnosticUnderlineOk = { underline = true },
-		PmenuSel = { fg = colors.mainOrange },
+		PmenuSel = { link = "Visual" },
+		Pmenu = { fg = colors.mainYellow, bg = palette.bgDark },
+    Scrollbar = { bg = palette.bgDark },
+    PmenuSbar = { bg = palette.bgDark },
 		Question = { fg = colors.mainGreen },
 		LineNr = { fg = colors.mainGray },
 		StatusLine = { fg = colors.mainGreen },
 		StatusLineNC = { fg = colors.mainGreen, bg = colors.bgColorNC },
-		TabLine = { fg = colors.mainGreen, bg = config.selected_tab_highlight and colors.bgColorNC or palette.bg }, -- Tab title
-		TabLineSel = { fg = colors.mainWhite, bg = palette.bg }, -- Curent tab title
+		TabLine = { fg = colors.mainGreen, bg = config.selected_tab_highlight and palette.bgDark or palette.bgNoBG }, -- Tab title
+		TabLineSel = { fg = colors.mainWhite, bg = config.colorless_bg and colors.bgColorlessNC or colors.bgColorNC }, -- Curent tab title
 	}
 end
 

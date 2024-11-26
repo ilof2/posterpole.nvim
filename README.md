@@ -21,7 +21,7 @@
 ### [Posterpole Repo](https://github.com/posterpole)
 
 - [Alacritty](https://github.com/posterpole/alacritty)
-- [VScode](https://github.com/posterpole/vscode) (release soon)
+- [VScode](https://github.com/posterpole/vscode)
 - Wezterm (WIP)
 
 ## Features
@@ -68,6 +68,9 @@ require("posterpole").setup({
   colors = {
     posterpole = {}, -- { mainRed = "#550000" }
     posterpole_term = {}, -- { mainRed = 95 }
+  },
+  lualine = {
+    transparent = true
   }
 })
 
@@ -134,6 +137,9 @@ Colors list which can be overwritten:
 - [cmp](https://github.com/hrsh7th/nvim-cmp)
 - [lua-fzf](https://github.com/ibhagwan/fzf-lua)
 - [aerial](https://github.com/stevearc/aerial.nvim)
+- [lualine](https://github.com/nvim-lualine/lualine.nvim)
+- [notify](https://github.com/rcarriga/nvim-notify)
+- [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
 
 ## Plans
 

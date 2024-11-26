@@ -1,21 +1,19 @@
-local config = require("posterpole.config")
-
 local M = {}
 
----@param user_opts? PosterpoleConfig
-M.setup = function(user_opts)
-	if user_opts then
-		config.set(user_opts)
-	end
-end
-
 M._colorscheme = function(variant)
+
+  local palette = require("posterpole.colors").setup(variant)
+  vim.g.palette = palette
+
 	local posterpole = require("posterpole.highlighs")
-	posterpole.clear_hl()
+  local config = require("posterpole.config").current
+
 
 	vim.g.colors_name = variant
-
-	posterpole.set_all(variant)
+	posterpole.clear_hl()
+	posterpole.set_all(palette, variant, config)
 end
+
+M.setup = require("posterpole.config").setup
 
 return M
