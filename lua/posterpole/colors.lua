@@ -32,8 +32,8 @@ function M.setup(variant)
 			-- main bg colors
 			bgColor = 234,
 			bgColorNC = 236,
-			bgDarkColor = 234,
-			bgDarkColorless = 234,
+			bgDarkColor = 233,
+			bgDarkColorless = 233,
 			bgColorlessColor = 234,
 			bgColorlessNC = 239,
 

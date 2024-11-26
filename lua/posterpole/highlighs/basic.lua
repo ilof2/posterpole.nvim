@@ -83,6 +83,8 @@ function M.setup(palette, config)
 		DiagnosticUnderlineOk = { underline = true },
 		PmenuSel = { link = "Visual" },
 		Pmenu = { fg = colors.mainYellow, bg = palette.bgDark },
+    Scrollbar = { bg = palette.bgDark },
+    PmenuSbar = { bg = palette.bgDark },
 		Question = { fg = colors.mainGreen },
 		LineNr = { fg = colors.mainGray },
 		StatusLine = { fg = colors.mainGreen },
