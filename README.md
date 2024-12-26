@@ -140,6 +140,7 @@ Colors list which can be overwritten:
 - [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [notify](https://github.com/rcarriga/nvim-notify)
 - [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ## Plans
 

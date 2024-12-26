@@ -15,5 +15,6 @@ M.cmp = require("posterpole.highlighs.plugins.cmp")
 M.blink_cmp = require("posterpole.highlighs.plugins.blink_cmp")
 M.beacon = require("posterpole.highlighs.plugins.beacon")
 M.basic = require("posterpole.highlighs.basic")
+M.whichkey = require("posterpole.highlighs.plugins.whichkey")
 
 return M
