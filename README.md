@@ -22,6 +22,8 @@
 
 - [Alacritty](https://github.com/posterpole/alacritty)
 - [VScode](https://github.com/posterpole/vscode)
+- [Ghostty](https://github.com/posterpole/ghostty)
+- [Zellij](https://github.com/posterpole/zellij)
 - Wezterm (WIP)
 
 ## Features
@@ -140,6 +142,7 @@ Colors list which can be overwritten:
 - [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [notify](https://github.com/rcarriga/nvim-notify)
 - [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ## Plans
 

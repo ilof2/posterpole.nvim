@@ -18,6 +18,7 @@ M.plugins = {
   plugins.blink_cmp,
   plugins.fzf,
   plugins.lsp,
+  plugins.whichkey,
 }
 
 M.basic_highlights = basic
