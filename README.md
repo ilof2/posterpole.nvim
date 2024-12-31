@@ -22,6 +22,8 @@
 
 - [Alacritty](https://github.com/posterpole/alacritty)
 - [VScode](https://github.com/posterpole/vscode)
+- [Ghostty](https://github.com/posterpole/ghostty)
+- [Zellij](https://github.com/posterpole/zellij)
 - Wezterm (WIP)
 
 ## Features
