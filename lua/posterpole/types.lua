@@ -8,6 +8,7 @@
 ---@field selected_tab_highlight? boolean
 ---@field fg_saturation? integer
 ---@field bg_saturation? integer
+---@field adaptive_brightness? AdaptiveConfig
 ---@field colors? PaletteColors
 ---@field lualine? LualineConfig
 ---
@@ -15,67 +16,47 @@
 ---@class LualineConfig
 ---@field transparent? boolean
 
---- Colors which are used in posterpole-term theme variant
----@class TermColors
----@field mainGray? integer
----@field mainBlack? integer
----@field mainYellow? integer
----@field mainOrange? integer
----@field mainWhite? integer
----@field mainGreen? integer
----@field mainCyan? integer
----@field mainBlue? integer
----@field mainPurple? integer
----@field mainPink? integer
----@field mainRed? integer
----@field deepRed? integer
----@field deepGreen? integer
----@field brightGreen? integer
----@field brightGray? integer
----@field bgColor? integer
----@field bgColorNC? integer
----@field bgDarkColor? integer
----@field bgDarkColorless? integer
----@field bgColorlessColor? integer
----@field bgColorlessNC? integer
----@field brightTermBlack? integer
----@field brightTermBlue? integer
----@field brightTermCyan? integer
----@field brightTermGreen? integer
----@field brightTermMagenta? integer
----@field brightTermRed? integer
----@field brightTermWhite? integer
----@field brightTermYellow? integer
+---Adaptive config
+---@class AdaptiveConfig
+---@field enabled boolean
+---@field max_brightness? integer
+---@field min_brightness? integer
+---@field daylight_duration? integer
+---@field noon_time? integer
 
+--- Color object
+---@class Color
+---@field hex? string
+---@field cterm? integer
 
 --- GUI colors
 ---@class Colors
----@field mainGray? string
----@field mainBlack? string
----@field mainYellow? string
----@field mainOrange? string
----@field mainWhite? string
----@field mainGreen? string
----@field mainCyan? string
----@field mainBlue? string
----@field mainPurple? string
----@field mainPink? string
----@field mainRed? string
----@field deepRed? string
----@field deepGreen? string
----@field brightGreen? string
----@field brightGray? string
----@field bgColor? string
----@field bgColorNC? string
----@field bgDarkColor? string
----@field bgDarkColorless? string
----@field bgColorlessColor? string
----@field bgColorlessNC? string
----@field brightTermBlack? string
----@field brightTermBlue? string
----@field brightTermCyan? string
----@field brightTermGreen? string
----@field brightTermMagenta? string
----@field brightTermRed? string
----@field brightTermWhite? string
----@field brightTermYellow? string
+---@field mainGray? Color
+---@field mainBlack? Color
+---@field mainYellow? Color
+---@field mainOrange? Color
+---@field mainWhite? Color
+---@field mainGreen? Color
+---@field mainCyan? Color
+---@field mainBlue? Color
+---@field mainPurple? Color
+---@field mainPink? Color
+---@field mainRed? Color
+---@field deepRed? Color
+---@field deepGreen? Color
+---@field brightGreen? Color
+---@field brightGray? Color
+---@field bgColor? Color
+---@field bgColorNC? Color
+---@field bgDarkColor? Color
+---@field bgDarkColorless? Color
+---@field bgColorlessColor? Color
+---@field bgColorlessNC? Color
+---@field brightTermBlack? Color
+---@field brightTermBlue? Color
+---@field brightTermCyan? Color
+---@field brightTermGreen? Color
+---@field brightTermMagenta? Color
+---@field brightTermRed? Color
+---@field brightTermWhite? Color
+---@field brightTermYellow? Color

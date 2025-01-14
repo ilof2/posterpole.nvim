@@ -33,6 +33,7 @@
 - ☀︎  Configurable brightness and saturation
 - 👾 `posterpole-term` variant which can be used in <br>
 terminals without `$TERM=xterm-256color` support ( Macos terminal for example )
+- 🌗 Adaptive brightness based on current hour
 
 ## Installation
 
@@ -43,14 +44,15 @@ Lazy:
   "ilof2/posterpole.nvim",
   priority=1000,
   config = function ()
-    require("posterpole").setup({
+    local posterpole = require("posterpole")
+    posterpole.setup({
       -- config here
     })
     vim.cmd("colorscheme posterpole")
-
-    -- if you need colorscheme without termguicolors support
-    -- This variant set termguicolors to false, be aware of using it
-    -- vim.cmd("colorscheme posterpole-term")
+    
+    -- This function create sheduled task, which will reload theme every hour
+    -- Without "setup_adaptive" adaptive brightness will be set only after every restart
+    posterpole.setup_adaptive()
   end
 }
 ```
@@ -68,8 +70,14 @@ require("posterpole").setup({
   fg_saturation = 0, -- font saturation, gray colors become more brighter
   bg_saturation = 0, -- background saturation
   colors = {
-    posterpole = {}, -- { mainRed = "#550000" }
-    posterpole_term = {}, -- { mainRed = 95 }
+    posterpole = {}, -- { mainRed = {hex = "#550000", cterm = 95} }
+  },
+  adaptive_brightness = {
+    enabled = false,
+    max_brightness = 1, -- maximum brightness for the day
+    min_brightness = -6, -- minimum brightness for the day
+    daylight_duration = 12, -- how long is daylight
+    noon_time = 12 -- hour when the theme will have maximum brightness
   },
   lualine = {
     transparent = true
@@ -147,8 +155,7 @@ Colors list which can be overwritten:
 ## Plans
 
 1. More plugins support
-2. Adaptive colors support
-3. Custom highlight groups
+2. Custom highlight groups
 
 ## Inspiration
 
