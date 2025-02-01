@@ -20,7 +20,6 @@ local function set_adaptive_brightness(user_opts)
 		+ (max_brightness - min_brightness)
 		* (1 + math.cos(math.pi * (current_hour - noon_time) / daylight_duration))
 		/ 2
-	print("brightness: " .. brightness)
 	user_opts.brightness = brightness
 
 	return user_opts
