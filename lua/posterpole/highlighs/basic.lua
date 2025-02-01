@@ -6,7 +6,7 @@ local M = {}
 function M.setup(palette, config)
 	local colors = palette.colors
 	return {
-		Normal = { bg = palette.bgNoBG, fg = colors.mainWhite },
+		Normal = { bg = palette.bgNoBG, fg = colors.mainWhite},
 		NormalNC = { bg = palette.bgInactive, fg = colors.mainWhite },
 		EndOfBuffer = { bg = palette.bgNoBG, fg = colors.mainGray },
 		Function = { fg = colors.mainBlue, bold = true },
@@ -64,10 +64,10 @@ function M.setup(palette, config)
 		ErrorMsg = { fg = colors.mainRed, force = true },
 		Cursor = { reverse = true },
 		lCursor = { reverse = true },
-		CurSearch = { fg = "black", bg = colors.mainOrange },
+		CurSearch = { fg = colors.mainBlack, bg = colors.mainOrange},
 		CursorLine = { bg = colors.bgColorNC },
-		Search = { fg = "black", bg = colors.mainRed },
-		NvimInternalError = { bg = colors.mainRed, fg = "black" },
+		Search = { fg = colors.mainBlack, bg = colors.mainRed },
+		NvimInternalError = { bg = colors.mainRed, fg = colors.mainBlack },
 		QuickFixLine = { fg = colors.mainOrange },
 		Directory = { fg = colors.mainCyan },
 		MoreMsg = { fg = colors.mainCyan },
@@ -76,7 +76,7 @@ function M.setup(palette, config)
 		WinBarNC = { fg = palette.fg, bg = nil },
 		WinSeparator = { fg = colors.mainGray, bg = nil },
 		NormalFloat = { fg = colors.mainWhite, bg = nil },
-		DiagnosticUnderlineError = { underline = true },
+		DiagnosticUnderlineError = { underline = true, sp = colors.mainRed },
 		DiagnosticUnderlineWarn = { underline = true },
 		DiagnosticUnderlineInfo = { underline = true },
 		DiagnosticUnderlineHint = { underline = true },

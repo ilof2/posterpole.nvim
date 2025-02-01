@@ -15,6 +15,7 @@ function M.setup(palette, config)
     ["@property"] = { fg = colors.mainYellow },
 
     ["@attribute.builtin.python"] = { link = "Macro" },
+    ["@module"] = { fg = colors.mainYellow },
 
     ["@function.macro.rust"] = { link = "Type" },
 
