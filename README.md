@@ -22,10 +22,11 @@
 
 - [Alacritty](https://github.com/posterpole/alacritty)
 - [Kitty](https://github.com/posterpole/kitty)
-- [VScode](https://github.com/posterpole/vscode)
+- [Wezterm](https://github.com/posterpole/wezterm)
 - [Ghostty](https://github.com/posterpole/ghostty)
+- [VScode](https://github.com/posterpole/vscode)
 - [Zellij](https://github.com/posterpole/zellij)
-- Wezterm (WIP)
+
 
 ## Features
 
