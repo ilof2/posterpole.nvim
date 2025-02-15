@@ -21,6 +21,7 @@
 ### [Posterpole Repo](https://github.com/posterpole)
 
 - [Alacritty](https://github.com/posterpole/alacritty)
+- [Kitty](https://github.com/posterpole/kitty)
 - [VScode](https://github.com/posterpole/vscode)
 - [Ghostty](https://github.com/posterpole/ghostty)
 - [Zellij](https://github.com/posterpole/zellij)
