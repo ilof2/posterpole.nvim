@@ -20,6 +20,9 @@ local default = {
     transparent = true
   },
   colors = {},
+  groups = {
+    posterpole = {}
+  },
 }
 
 M.current = default
