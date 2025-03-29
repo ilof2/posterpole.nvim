@@ -34,7 +34,7 @@
 - 🎨 Color/colorless bg variants
 - ☀︎  Configurable brightness and saturation
 - 👾 `posterpole-term` variant which can be used in <br>
-terminals without `$TERM=xterm-256color` support ( Macos terminal for example )
+terminals without `$TERM=xterm-256color` support
 - 🌗 Adaptive brightness based on current hour
 
 ## Installation
@@ -47,6 +47,10 @@ Lazy:
   priority=1000,
   config = function ()
     local posterpole = require("posterpole")
+
+  -- Use it if you want use built-in colors
+  -- local palette = vim.g.palette
+
     posterpole.setup({
       -- config here
     })
@@ -74,6 +78,12 @@ require("posterpole").setup({
   colors = {
     posterpole = {}, -- { mainRed = {hex = "#550000", cterm = 95} }
   },
+  groups = {
+    posterpole = {
+     -- Comment = {fg = {hex = "#FFF000", cterm = 95 }}
+     -- Comment = {fg = palette.colors.mainCyan },
+    },
+  },
   adaptive_brightness = {
     enabled = false,
     max_brightness = 1, -- maximum brightness for the day
@@ -87,9 +97,35 @@ require("posterpole").setup({
 })
 
 ```
+## Highlight Groups
+
+<details close>
+You can provide your custom highlight groups in this way:
+```lua
+{
+    groups = {
+        posterpole = {
+            -- your groups here
+            { GroupName = { fg = Color, bg = Color }}
+        }
+    }
+}
+```
+Color table have structure:
+
+```lua
+{hex = "#000000", cterm = 123}
+```
+Also supported options: `link`, `underline` and `reverse`
+
+> [!NOTE]
+> All options are optional, if `link` option provided, all other options will be ignored
+
+</details>
 
 ## Colors
 
+<details close>
 You can override all colors that are used in colorscheme
 
 > [!IMPORTANT]
@@ -135,10 +171,11 @@ Colors list which can be overwritten:
   bgColorlessNC
 }
 ```
+</details>
 
 ## Plugins Support (full or partial)
 
-<details open>
+<details close>
 
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
@@ -161,7 +198,6 @@ Colors list which can be overwritten:
 ## Plans
 
 1. More plugins support
-2. Custom highlight groups
 
 ## Inspiration
 

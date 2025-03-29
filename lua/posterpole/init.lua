@@ -5,6 +5,10 @@ local MIN_BRIGHTNESS = -6
 local DAYLIGHT_DURATION = 12
 local NOON_TIME = 12
 
+if not vim.g.palette then
+  vim.g.palette = require("posterpole.colors")
+end
+
 local function set_adaptive_brightness(user_opts)
 	math = require("math")
 	os = require("os")
@@ -54,14 +58,11 @@ M._colorscheme = function(variant)
 		config = set_adaptive_brightness(config)
 	end
 
-	local palette = require("posterpole.colors").setup(variant)
-	vim.g.palette = palette
-
 	local posterpole = require("posterpole.highlighs")
 
 	vim.g.colors_name = variant
 	posterpole.clear_hl()
-	posterpole.set_all(palette, variant, config)
+	posterpole.set_all(variant, config)
 end
 
 M.setup = require("posterpole.config").setup

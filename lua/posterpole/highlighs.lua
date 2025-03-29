@@ -31,12 +31,8 @@ end
 
 ---@param palette Palette
 local function set_terminal_colors(palette, variant)
-  if (variant == "posterpole-term") then
-    -- TODO: in the future need to translate xterm color code into the hex
-    return
-  end
+  -- TODO: in the future need to translate xterm color code into the hex
   local colors = palette.colors
-
   vim.g.terminal_color_0 = colors.mainBlack.hex
   vim.g.terminal_color_1 = colors.mainRed.hex
   vim.g.terminal_color_2 = colors.mainGreen.hex
@@ -57,9 +53,10 @@ local function set_terminal_colors(palette, variant)
   vim.g.terminal_color_foreground = colors.mainWhite.hex
 end
 
-M.set_all = function(palette, variant, config)
+M.set_all = function(variant, config)
 	M.variant = variant
   vim.background = "dark"
+  local palette = vim.g.palette.setup(variant)
 
 	local basic = require("posterpole.highlighs.basic")
   local hls = require("posterpole.highlighs.init")
@@ -72,6 +69,7 @@ M.set_all = function(palette, variant, config)
 	for _, highlighs in next, hls.plugins do
 		set_hl(highlighs.setup(palette, config))
 	end
+  set_hl(config.custom_groups.posterpole)
 end
 
 return M

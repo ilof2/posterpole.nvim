@@ -11,10 +11,19 @@
 ---@field adaptive_brightness? AdaptiveConfig
 ---@field colors? PaletteColors
 ---@field lualine? LualineConfig
+---@field custom_groups? CustomGroupsConfig
 ---
 --- Lualine config
 ---@class LualineConfig
 ---@field transparent? boolean
+---
+--- Custom Highlight Groups
+---@class CustomGroupsConfig
+---@field posterpole table<string, HighlightObject>
+---
+---@class HighlightObject
+---@field fg? Color
+---@field bg? Color
 
 ---Adaptive config
 ---@class AdaptiveConfig
