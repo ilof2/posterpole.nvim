@@ -69,7 +69,10 @@ M.set_all = function(variant, config)
 	for _, highlighs in next, hls.plugins do
 		set_hl(highlighs.setup(palette, config))
 	end
-  set_hl(config.custom_groups.posterpole)
+  local custom_groups = config.custom_groups
+  if custom_groups then
+    set_hl(config.custom_groups.posterpole)
+  end
 end
 
 return M
