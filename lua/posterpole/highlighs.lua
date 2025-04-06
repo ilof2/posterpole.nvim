@@ -58,6 +58,7 @@ M.set_all = function(variant, config)
   local palette = require("posterpole.colors").setup(variant)
 	local basic = require("posterpole.highlighs.basic")
   local hls = require("posterpole.highlighs.init")
+  vim.g.palette = palette
 
   set_terminal_colors(palette)
 	-- local set_hl = variant == "posterpole_term" and set_term_highlights or set_highlights
