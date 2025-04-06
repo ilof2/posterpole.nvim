@@ -30,8 +30,7 @@ local function set_highlights(highlights)
 end
 
 ---@param palette Palette
-local function set_terminal_colors(palette, variant)
-  -- TODO: in the future need to translate xterm color code into the hex
+local function set_terminal_colors(palette)
   local colors = palette.colors
   vim.g.terminal_color_0 = colors.mainBlack.hex
   vim.g.terminal_color_1 = colors.mainRed.hex
@@ -56,12 +55,11 @@ end
 M.set_all = function(variant, config)
 	M.variant = variant
   vim.background = "dark"
-  local palette = vim.g.palette.setup(variant)
-
+  local palette = require("posterpole.colors").setup(variant)
 	local basic = require("posterpole.highlighs.basic")
   local hls = require("posterpole.highlighs.init")
 
-  set_terminal_colors(palette, variant)
+  set_terminal_colors(palette)
 	-- local set_hl = variant == "posterpole_term" and set_term_highlights or set_highlights
   local set_hl = set_highlights
 
