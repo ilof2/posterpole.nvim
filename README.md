@@ -48,9 +48,6 @@ Lazy:
   config = function ()
     local posterpole = require("posterpole")
 
-  -- Use it if you want use built-in colors
-  -- local palette = vim.g.palette
-
     posterpole.setup({
       -- config here
     })
@@ -81,7 +78,6 @@ require("posterpole").setup({
   groups = {
     posterpole = {
      -- Comment = {fg = {hex = "#FFF000", cterm = 95 }}
-     -- Comment = {fg = palette.colors.mainCyan },
     },
   },
   adaptive_brightness = {
