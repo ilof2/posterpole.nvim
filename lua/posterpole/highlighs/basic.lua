@@ -12,7 +12,7 @@ function M.setup(palette, config)
 		Function = { fg = colors.mainBlue, bold = true },
 		Boolean = { fg = colors.mainPurple }, -- boolean constants
 		Character = { fg = colors.mainGreen }, -- character constants
-		Comment = { fg = colors.mainGray }, -- comments
+		Comment = { fg = colors.brightGray }, -- comments
 		Constant = { fg = colors.mainOrange, bold = true }, -- (preferred) any constant Delimiter = { fg = gray4 },          -- delimiter characters
 		Float = { fg = colors.mainPurple }, -- float constants
 		Error = { fg = palette.fg }, -- (preferred) any erroneous construct
@@ -20,7 +20,7 @@ function M.setup(palette, config)
 		Identifier = { fg = colors.mainRed }, -- (preferred) any variable
 		Keyword = { fg = colors.mainRed }, -- any other keyword
 		Conditional = { fg = palette.fg }, -- conditionals
-		Visual = { fg = colors.mainWhite, bg = colors.mainGray },
+		Visual = { bg = colors.mainGray },
 		Repeat = { fg = palette.fg }, -- loop keywords: 'for', 'while' etc
 		Label = { fg = palette.fg }, -- 'case', 'default', etc
 		Number = { fg = colors.mainPurple }, -- number constant

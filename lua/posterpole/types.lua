@@ -49,7 +49,6 @@
 ---@field mainCyan? Color
 ---@field mainBlue? Color
 ---@field mainPurple? Color
----@field mainPink? Color
 ---@field mainRed? Color
 ---@field deepRed? Color
 ---@field deepGreen? Color

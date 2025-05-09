@@ -149,7 +149,6 @@ Colors list which can be overwritten:
   mainCyan
   mainBlue
   mainPurple
-  mainPink
   mainRed
 
   -- scales
