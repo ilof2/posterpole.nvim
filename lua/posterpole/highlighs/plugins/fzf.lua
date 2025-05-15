@@ -1,11 +1,9 @@
 local M = {}
 
-
 ---@param palette Palette
 ---@param config PosterpoleConfig
 ---@return table
 function M.setup(palette, config)
-
   local colors = palette.colors
 
   return {
@@ -23,8 +21,9 @@ function M.setup(palette, config)
     FzfLuaTabMarker = { fg = colors.mainWhite },
     FzfLuaScrollFloatEmpty = { link = "Normal" },
     FzfLuaDirPart = { link = "String" },
-    FzfLuaFzfMatch = { link = "CurSearch"},
-    FzfLuaSearch = { link = "CurSearch" }
+    FzfLuaFzfMatch = { link = "CurSearch" },
+    FzfLuaSearch = { link = "CurSearch" },
+    FzfLuaLivePrompt = { link = "Keyword" },
   }
 end
 
