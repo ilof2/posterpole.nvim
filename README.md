@@ -26,6 +26,7 @@
 - [Ghostty](https://github.com/posterpole/ghostty)
 - [VScode](https://github.com/posterpole/vscode)
 - [Zellij](https://github.com/posterpole/zellij)
+- [Tmux](https://github.com/posterpole/tmux-posterpole)
 
 
 ## Features
@@ -95,7 +96,7 @@ require("posterpole").setup({
 ```
 ## Highlight Groups
 
-<details close>
+<details>
 You can provide your custom highlight groups in this way:
 ```lua
 {
@@ -121,7 +122,7 @@ Also supported options: `link`, `underline` and `reverse`
 
 ## Colors
 
-<details close>
+<details>
 You can override all colors that are used in colorscheme
 
 > [!IMPORTANT]
@@ -171,7 +172,7 @@ Colors list which can be overwritten:
 
 ## Plugins Support (full or partial)
 
-<details close>
+<details>
 
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
