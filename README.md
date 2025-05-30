@@ -96,7 +96,7 @@ require("posterpole").setup({
 ```
 ## Highlight Groups
 
-<details>
+
 You can provide your custom highlight groups in this way:
 ```lua
 {
@@ -118,11 +118,11 @@ Also supported options: `link`, `underline` and `reverse`
 > [!NOTE]
 > All options are optional, if `link` option provided, all other options will be ignored
 
-</details>
+
 
 ## Colors
 
-<details>
+
 You can override all colors that are used in colorscheme
 
 > [!IMPORTANT]
@@ -168,11 +168,10 @@ Colors list which can be overwritten:
   bgColorlessNC
 }
 ```
-</details>
 
 ## Plugins Support (full or partial)
 
-<details>
+
 
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
@@ -190,7 +189,6 @@ Colors list which can be overwritten:
 - [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
-</details>
 
 ## Plans
 
