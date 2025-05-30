@@ -171,8 +171,6 @@ Colors list which can be overwritten:
 
 ## Plugins Support (full or partial)
 
-
-
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
@@ -189,10 +187,6 @@ Colors list which can be overwritten:
 - [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
-
-## Plans
-
-1. More plugins support
 
 ## Inspiration
 
