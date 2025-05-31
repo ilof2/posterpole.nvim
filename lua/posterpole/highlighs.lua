@@ -61,16 +61,14 @@ M.set_all = function(variant, config)
   vim.g.palette = palette
 
   set_terminal_colors(palette)
-	-- local set_hl = variant == "posterpole_term" and set_term_highlights or set_highlights
-  local set_hl = set_highlights
 
-	set_hl(basic.setup(palette, config))
+	set_highlights(basic.setup(palette, config))
 	for _, highlighs in next, hls.plugins do
-		set_hl(highlighs.setup(palette, config))
+		set_highlights(highlighs.setup(palette, config))
 	end
   local custom_groups = config.custom_groups
   if custom_groups then
-    set_hl(config.custom_groups.posterpole)
+    set_highlights(config.custom_groups.posterpole)
   end
 end
 
