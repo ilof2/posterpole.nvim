@@ -12,7 +12,7 @@
 ## Main theme
 <img width="1896" alt="Screenshot 2024-11-01 at 15 38 12" src="https://github.com/user-attachments/assets/957eb9fe-fe66-4f1f-8e4e-da43f5830e0f">
 
-## Posterpole-term theme
+## notermguicolors
 
 <img width="1896" alt="Screenshot 2024-11-01 at 15 37 56" src="https://github.com/user-attachments/assets/299eac64-dc7b-4854-8de9-9c6f67afc592">
 
@@ -26,7 +26,6 @@
 - [Ghostty](https://github.com/posterpole/ghostty)
 - [VScode](https://github.com/posterpole/vscode)
 - [Zellij](https://github.com/posterpole/zellij)
-- [Tmux](https://github.com/posterpole/tmux-posterpole)
 
 
 ## Features
@@ -34,7 +33,7 @@
 - 🪟 Transparency
 - 🎨 Color/colorless bg variants
 - ☀︎  Configurable brightness and saturation
-- 👾 `posterpole-term` variant which can be used in <br>
+- 👾 `set notermguicolors` do not broke colors<br>
 terminals without `$TERM=xterm-256color` support
 - 🌗 Adaptive brightness based on current hour
 
@@ -126,7 +125,7 @@ Also supported options: `link`, `underline` and `reverse`
 You can override all colors that are used in colorscheme
 
 > [!IMPORTANT]
-> posterpole-term color values should be integer in range **0-256**
+> cterm color values should be integer in range **0-256**
 
 > [!NOTE]
 > `brightness`, `fg_saturation`, and `bg_saturation` settings are not applied to custom colors
@@ -150,7 +149,6 @@ Colors list which can be overwritten:
   mainCyan
   mainBlue
   mainPurple
-  mainPink
   mainRed
 
   -- scales
