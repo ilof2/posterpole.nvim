@@ -31,7 +31,7 @@
 ## Features
 
 - 🪟 Transparency
-- 🎨 Color/colorless bg variants
+- 🎨 Configurable colors and highlight groups
 - ☀︎  Configurable brightness and saturation
 - 👾 `set notermguicolors` do not broke colors<br>
 terminals without `$TERM=xterm-256color` support
@@ -66,7 +66,6 @@ Lazy:
 -- Default
 require("posterpole").setup({
   transparent = false,
-  colorless_bg = false, -- grayscale or not
   dim_inactive = false, -- highlight inactive splits
   brightness = 0, -- negative numbers - darker, positive - lighter
   selected_tab_highlight = false, --highlight current selected tab
@@ -161,9 +160,6 @@ Colors list which can be overwritten:
   bgColor
   bgColorNC
   bgDarkColor
-  bgDarkColorless
-  bgColorlessColor
-  bgColorlessNC
 }
 ```
 

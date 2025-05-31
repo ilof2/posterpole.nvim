@@ -12,7 +12,7 @@ function M.setup(palette, config)
 		RenderMarkdownH4Bg = { bg = colors.mainGray, bold = true },
 		RenderMarkdownH5Bg = { bg = colors.mainGray, bold = true },
 		RenderMarkdownH6Bg = { bg = colors.mainGray, bold = true },
-		RenderMarkdownCode = { bg = config.colorless_bg and colors.bgDarkColorless or colors.bgDarkColor },
+		RenderMarkdownCode = { bg = colors.bgDarkColor },
 	}
 end
 
