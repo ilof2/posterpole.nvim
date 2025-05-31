@@ -90,7 +90,7 @@ function M.setup(palette, config)
     StatusLine = { fg = colors.mainGreen },
     StatusLineNC = { fg = colors.mainGreen, bg = colors.bgColorNC },
     TabLine = { fg = colors.mainGreen, bg = config.selected_tab_highlight and palette.bgDark or palette.bgNoBG }, -- Tab title
-    TabLineSel = { fg = colors.mainWhite, bg = config.colorless_bg and colors.bgColorlessNC or colors.bgColorNC }, -- Curent tab title
+    TabLineSel = { fg = colors.mainWhite, bg = colors.bgColorNC }, -- Curent tab title
     Folded = { fg = colors.mainGray },
   }
 end

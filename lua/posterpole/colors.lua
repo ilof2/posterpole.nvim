@@ -51,9 +51,6 @@ function M.setup(variant)
 			bgColor = { cterm = 234, hex = hsl.hslToHex(260, 10 + config.bg_saturation, 15 + config.brightness) },
 			bgColorNC = { cterm = 236, hex = hsl.hslToHex(260, 10 + config.bg_saturation, 18 + config.brightness) },
 			bgDarkColor = { cterm = 233, hex = hsl.hslToHex(260, 10 + config.bg_saturation, 14 + config.brightness) },
-			bgDarkColorless = { cterm = 233, hex = hsl.hslToHex(260, 0, 12 + config.brightness) },
-			bgColorlessColor = { cterm = 234, hex = hsl.hslToHex(260, 0, 14 + config.brightness) },
-			bgColorlessNC = { cterm = 239, hex = hsl.hslToHex(260, 0, 16 + config.brightness) },
 
 			--builtin term bright colors
 			brightTermBlack = { cterm = 241, hex = hsl.hslToHex(0, 5 + config.fg_saturation, 28 + config.brightness) },
@@ -73,37 +70,34 @@ function M.setup(variant)
 	variants = vim.tbl_deep_extend("force", vim.deepcopy(variants), config.colors)
 	local colors = variants.posterpole
 
-	-- transparent
+  -- FIXME: Should be refactored
 	local bgColor = colors.bgColor
-	local bgColorless = colors.bgColorlessColor
-	local bg = config.colorless_bg and bgColorless or bgColor
+	local bg = bgColor
+
+	-- transparent
 	local bgNoBG = config.transparent and {hex="", cterm=""} or bg
 
 	-- dark
-	local bgDarkColorless = colors.bgDarkColorless
+  -- FIXME: Should be refactored
 	local bgDarkColor = colors.bgDarkColor
-	local bgDark = config.colorless_bg and bgDarkColorless or bgDarkColor
+	local bgDark = bgDarkColor
 	local bgDarkNoBG = config.transparent and {hex="", cterm=""} or bgDark
 
 	-- inactive
 	local bgInactiveColor = config.dim_inactive and colors.bgColorNC or bgNoBG
-	local bgInactiveColorless = config.dim_inactive and colors.bgColorlessNC or bgNoBG
-	local bgInactive = config.colorless_bg and bgInactiveColorless or bgInactiveColor
+	local bgInactive = bgInactiveColor
 
 	---@class Palette
 	local palette = {
 		colors = colors,
 		bgColor = bgColor,
     bg = bg,
-    bgNoBG = bgNoBG,
 		fg = colors.mainRed,
-		bgColorless = bgColorless,
-		bgDarkColorless = bgDarkColorless,
+    bgNoBG = bgNoBG,
 		bgDarkColor = bgDarkColor,
     bgDark = bgDark,
     bgDarkNoBG = bgDarkNoBG,
 		bgInactiveColor = bgInactiveColor,
-		bgInactiveColorless = bgInactiveColorless,
 		bgInactive = bgInactive,
 	}
 	return palette

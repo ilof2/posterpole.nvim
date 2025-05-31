@@ -3,7 +3,6 @@ M = {}
 ---@type PosterpoleConfig
 local default = {
   transparent = false,
-  colorless_bg = false,
   dim_inactive = false,
   brightness = 0,
   selected_tab_highlight = true,

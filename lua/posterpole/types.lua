@@ -2,7 +2,6 @@
 --- Main theme config
 ---@class PosterpoleConfig
 ---@field transparent? boolean
----@field colorless_bg? boolean
 ---@field dim_inactive? boolean
 ---@field brightness? integer
 ---@field selected_tab_highlight? boolean
@@ -58,9 +57,6 @@
 ---@field bgColor? Color
 ---@field bgColorNC? Color
 ---@field bgDarkColor? Color
----@field bgDarkColorless? Color
----@field bgColorlessColor? Color
----@field bgColorlessNC? Color
 ---@field brightTermBlack? Color
 ---@field brightTermBlue? Color
 ---@field brightTermCyan? Color
