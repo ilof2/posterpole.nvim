@@ -1,3 +1,3 @@
 vim.o.termguicolors = true
-local posterpole = require("posterpole")
-posterpole._colorscheme("posterpole")
+vim.g.colors_name = "posterpole"
+require("posterpole")._colorscheme()

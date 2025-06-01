@@ -1,11 +1,11 @@
 local M = {}
 
-local MAX_BRIGHTNESS = 1
-local MIN_BRIGHTNESS = -6
-local DAYLIGHT_DURATION = 12
-local NOON_TIME = 12
-
 local function set_adaptive_brightness(user_opts)
+  local MAX_BRIGHTNESS = 1
+  local MIN_BRIGHTNESS = -6
+  local DAYLIGHT_DURATION = 12
+  local NOON_TIME = 12
+
   math = require("math")
   os = require("os")
   local current_hour = os.date("*t").hour
@@ -46,27 +46,31 @@ M.setup_adaptive = function(start_delay, step_delay)
   end
 end
 
-local setup_theme = function(variant, config)
+local setup_theme = function(config)
+  local variant = vim.g.colors_name
+
   if config.adaptive_brightness.enabled then
     config = set_adaptive_brightness(config)
   end
 
   local posterpole = require("posterpole.highlighs")
-
-  vim.g.colors_name = variant
   posterpole.clear_hl()
   posterpole.set_all(variant, config)
+
+  -- :g.colors_name resets on clear_hl
+  vim.g.colors_name = variant
 end
 
 vim.api.nvim_create_user_command("PosterpoleToggleBG", function()
+  local variant = vim.g.colors_name
   local config = require("posterpole.config").current
   config.transparent = not config.transparent
-  setup_theme(vim.g.colors_name, config)
+  setup_theme(config)
 end, {})
 
-M._colorscheme = function(variant)
+M._colorscheme = function()
   local config = require("posterpole.config").current
-  setup_theme(variant, config)
+  setup_theme(config)
 end
 
 M.setup = require("posterpole.config").setup
