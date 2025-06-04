@@ -4,46 +4,45 @@ local M = {}
 ---@param config PosterpoleConfig
 ---@return table
 function M.setup(palette, config)
-  local colors = palette.colors
-  return {
-    Normal = { bg = palette.bgNoBG, fg = colors.mainWhite },
-    NormalNC = { bg = palette.bgInactive, fg = colors.mainWhite },
-    EndOfBuffer = { bg = palette.bgNoBG, fg = colors.mainGray },
-    Function = { fg = colors.mainBlue, bold = true },
-    Boolean = { fg = colors.mainPurple }, -- boolean constants
-    Character = { fg = colors.mainGreen }, -- character constants
-    Comment = { fg = colors.mainGray }, -- comments
-    Constant = { fg = colors.mainOrange, bold = true }, -- (preferred) any constant Delimiter = { fg = gray4 },          -- delimiter characters
-    Float = { fg = colors.mainPurple }, -- float constants
-    Error = { fg = palette.fg }, -- (preferred) any erroneous construct
-    Exception = { fg = palette.fg }, -- 'try', 'catch', 'throw'
-    Identifier = { fg = colors.mainRed }, -- (preferred) any variable
-    Keyword = { fg = colors.mainRed }, -- any other keyword
-    Conditional = { fg = palette.fg }, -- conditionals
-    Visual = { fg = colors.mainWhite, bg = colors.mainGray },
-    Repeat = { fg = palette.fg }, -- loop keywords: 'for', 'while' etc
-    Label = { fg = palette.fg }, -- 'case', 'default', etc
-    Number = { fg = colors.mainPurple }, -- number constant
-    Operator = { fg = colors.brightGray }, -- '+', '*', 'sizeof' etc
-    PreProc = { fg = palette.fg }, -- (preferred) generic preprocessor
-    Define = { fg = palette.fg }, -- preprocessor '#define'
-    Include = { fg = palette.fg }, -- preprocessor '#include'
-    Macro = { fg = colors.mainPurple }, -- macros
-    PreCondit = { fg = palette.fg }, -- preprocessor conditionals '#if', '#endif' etc
-    Special = { fg = colors.mainYellow }, -- (preferred) any special symbol
-    SpecialChar = { link = "Special" }, -- special character in a constant
-    Delimiter = { fg = colors.mainWhite }, -- special character in a constant
-    SpecialComment = { fg = palette.fg }, -- special things inside comments
-    Tag = { fg = palette.fg }, -- can use <C-]> on this
-    Statement = { fg = palette.fg }, -- (preferred) any statement
-    String = { fg = colors.mainGreen }, -- string constants
-    Title = { fg = colors.mainWhite },
-    Type = { fg = colors.mainPurple }, -- (preferred) 'int', 'long', 'char' etc
-    StorageClass = { fg = colors.mainBlue }, -- 'static', 'volatile' etc
-    Structure = { fg = colors.mainBlue }, -- 'struct', 'union', 'enum' etc
-    Typedef = { fg = colors.mainBlue }, -- 'typedef'
-    Todo = { fg = "black", bg = colors.mainCyan }, -- (preferred) 'TODO' keywords in comments
-
+	local colors = palette.colors
+	return {
+		Normal = { bg = palette.bgNoBG, fg = colors.mainWhite},
+		NormalNC = { bg = palette.bgInactive, fg = colors.mainWhite },
+		EndOfBuffer = { bg = palette.bgNoBG, fg = colors.mainGray },
+		Function = { fg = colors.mainBlue, bold = true },
+		Boolean = { fg = colors.mainPurple }, -- boolean constants
+		Character = { fg = colors.mainGreen }, -- character constants
+		Comment = { fg = colors.brightGray }, -- comments
+		Constant = { fg = colors.mainOrange, bold = true }, -- (preferred) any constant Delimiter = { fg = gray4 },          -- delimiter characters
+		Float = { fg = colors.mainPurple }, -- float constants
+		Error = { fg = palette.fg }, -- (preferred) any erroneous construct
+		Exception = { fg = palette.fg }, -- 'try', 'catch', 'throw'
+		Identifier = { fg = colors.mainRed }, -- (preferred) any variable
+		Keyword = { fg = colors.mainRed }, -- any other keyword
+		Conditional = { fg = palette.fg }, -- conditionals
+		Visual = { bg = colors.mainGray },
+		Repeat = { fg = palette.fg }, -- loop keywords: 'for', 'while' etc
+		Label = { fg = palette.fg }, -- 'case', 'default', etc
+		Number = { fg = colors.mainPurple }, -- number constant
+		Operator = { fg = colors.brightGray }, -- '+', '*', 'sizeof' etc
+		PreProc = { fg = palette.fg }, -- (preferred) generic preprocessor
+		Define = { fg = palette.fg }, -- preprocessor '#define'
+		Include = { fg = palette.fg }, -- preprocessor '#include'
+		Macro = { fg = colors.mainPurple }, -- macros
+		PreCondit = { fg = palette.fg }, -- preprocessor conditionals '#if', '#endif' etc
+		Special = { fg = colors.mainYellow }, -- (preferred) any special symbol
+		SpecialChar = { link = "Special" }, -- special character in a constant
+		Delimiter = { fg = colors.mainWhite }, -- special character in a constant
+		SpecialComment = { fg = palette.fg }, -- special things inside comments
+		Tag = { fg = palette.fg }, -- can use <C-]> on this
+		Statement = { fg = palette.fg }, -- (preferred) any statement
+		String = { fg = colors.mainGreen }, -- string constants
+		Title = { fg = colors.mainWhite },
+		Type = { fg = colors.mainPurple }, -- (preferred) 'int', 'long', 'char' etc
+		StorageClass = { fg = colors.mainBlue }, -- 'static', 'volatile' etc
+		Structure = { fg = colors.mainBlue }, -- 'struct', 'union', 'enum' etc
+		Typedef = { fg = colors.mainBlue }, -- 'typedef'
+		Todo = { fg = "black", bg = colors.mainCyan }, -- (preferred) 'TODO' keywords in comments
     Added = { fg = colors.mainGreen },
     Removed = { fg = colors.mainRed },
     Changed = { fg = colors.mainOrange },
