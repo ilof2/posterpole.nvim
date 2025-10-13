@@ -32,14 +32,14 @@ end
 ---@param palette Palette
 local function set_terminal_colors(palette)
   local colors = palette.colors
-  vim.g.terminal_color_0 = colors.mainBlack.hex
-  vim.g.terminal_color_1 = colors.mainRed.hex
-  vim.g.terminal_color_2 = colors.mainGreen.hex
-  vim.g.terminal_color_3 = colors.mainOrange.hex
-  vim.g.terminal_color_4 = colors.mainBlue.hex
-  vim.g.terminal_color_5 = colors.mainPurple.hex
-  vim.g.terminal_color_6 = colors.mainCyan.hex
-  vim.g.terminal_color_7 = colors.mainWhite.hex
+  vim.g.terminal_color_0 = colors.black.hex
+  vim.g.terminal_color_1 = colors.keyword.hex
+  vim.g.terminal_color_2 = colors.string.hex
+  vim.g.terminal_color_3 = colors.constant.hex
+  vim.g.terminal_color_4 = colors.func.hex
+  vim.g.terminal_color_5 = colors.type.hex
+  vim.g.terminal_color_6 = colors.directory.hex
+  vim.g.terminal_color_7 = colors.fg.hex
   vim.g.terminal_color_8 = colors.brightTermBlack.hex
   vim.g.terminal_color_9 = colors.brightTermRed.hex
   vim.g.terminal_color_10 = colors.brightTermGreen.hex
@@ -48,8 +48,8 @@ local function set_terminal_colors(palette)
   vim.g.terminal_color_13 = colors.brightTermMagenta.hex
   vim.g.terminal_color_14 = colors.brightTermCyan.hex
   vim.g.terminal_color_15 = colors.brightTermWhite.hex
-  vim.g.terminal_color_background = palette.bgNoBG.hex
-  vim.g.terminal_color_foreground = colors.mainWhite.hex
+  vim.g.terminal_color_background = palette.bgTransp.hex
+  vim.g.terminal_color_foreground = colors.fg.hex
 end
 
 M.set_all = function(variant, config)

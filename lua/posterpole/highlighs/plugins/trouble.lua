@@ -7,7 +7,7 @@ function M.setup(palette, config)
   local colors = palette.colors
 
   return {
-    TroubleCount = { fg = colors.mainGreen }
+    TroubleCount = { fg = colors.string }
   }
 end
 

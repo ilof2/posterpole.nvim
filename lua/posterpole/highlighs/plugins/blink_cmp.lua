@@ -15,20 +15,23 @@ function M.setup(palette, config)
 		BlinkCmpSignatureHelpBorder = { link = "WinSeparator" },
 
 		BlinkCmpMenuSelection = { link = "Visual" },
-		BlinkCmpLabel = { fg = colors.mainYellow },
-		BlinkCmpLabelDepricated = { fg = colors.mainGray, strikethrough = true },
+		BlinkCmpLabel = { link = "Special"},
+		BlinkCmpLabelDepricated = { fg = colors.comment, strikethrough = true },
 		BlinkCmpLabelMatch = { link = "PmenuSel" },
 		BlinkCmpGhostText = { link = "Comment" },
 
-		BlinkCmpKindText = { link = "Normal" },
+		BlinkCmpKindText = { link = "String" },
 		BlinkCmpKindFunction = { link = "Function" },
 		BlinkCmpKindVariable = { link = "Variable" },
 		BlinkCmpKindEnum = { link = "Constant" },
-		BlinkCmpKindSnippet = { link = "String" },
-		BlinkCmpKindField = { fg = colors.mainCyan },
+		BlinkCmpKindSnippet = { link = "Macro" },
+		BlinkCmpKindField = { fg = colors.directory },
 		BlinkCmpKindClass = { link = "Type" },
 		BlinkCmpKindConstant = { link = "Constant" },
 		BlinkCmpKindMethod = { link = "Function" },
+    BlinkCmpKindTypeParameter = { link = "Type"},
+    BlinkCmpKindProperty = { link = "Constant"},
+    BlinkCmpKindKeyword = { link = "Constant"}
 	}
 end
 

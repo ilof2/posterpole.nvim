@@ -8,23 +8,23 @@ function M.setup(palette, config)
 
   return {
     WhichKey = { bg = palette.bgDark},
-    WhichKeyBorder = { fg = colors.mainWhite },
-    WhichKeyDesc = { fg = colors.mainOrange },
-    WhichKeyGroup = { fg = colors.mainWhite },
-    WhichKeyIcon = { fg = colors.mainBlue },
-    WhichKeyIconAzure = { fg = colors.deepGreen },
-    WhichKeyIconBlue = { fg = colors.mainBlue },
-    WhichKeyIconCyaa = { fg = colors.mainCyan },
-    WhichKeyIconGreen = { fg = colors.mainGreen },
-    WhichKeyIconGrey = { fg = colors.mainGray },
-    WhichKeyIconOrange = { fg = colors.mainOrange },
-    WhichKeyIconPurple = { fg = colors.mainPurple },
-    WhichKeyIconRed = { fg = colors.mainRed },
-    WhichKeyIconYellow = { fg = colors.mainYellow },
+    WhichKeyBorder = { link = "Delimiter" },
+    WhichKeyDesc = { fg = colors.constant },
+    WhichKeyGroup = { fg = colors.fg },
+    WhichKeyIcon = { fg = colors.func },
+    WhichKeyIconAzure = { fg = colors.diffAdded },
+    WhichKeyIconBlue = { fg = colors.func },
+    WhichKeyIconCyaa = { fg = colors.directory },
+    WhichKeyIconGreen = { fg = colors.string },
+    WhichKeyIconGrey = { fg = colors.comment },
+    WhichKeyIconOrange = { fg = colors.constant },
+    WhichKeyIconPurple = { fg = colors.type },
+    WhichKeyIconRed = { fg = colors.keyword },
+    WhichKeyIconYellow = { fg = colors.special },
     WhichKeyNormal = { bg = palette.bgDark },
-    WhichKeySeparator	= { fg = colors.mainGray },
-    WhichKeyTitle = { fg = colors.mainYellow },
-    WhichKeyValue = { fg = colors.mainWhite }
+    WhichKeySeparator	= { fg = colors.comment },
+    WhichKeyTitle = { fg = colors.special },
+    WhichKeyValue = { fg = colors.fg }
   }
 end
 

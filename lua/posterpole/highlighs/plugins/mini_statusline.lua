@@ -7,14 +7,14 @@ function M.setup(palette, config)
   local colors = palette.colors
 
   return {
-    MiniStatuslineModeVisual = { fg = colors.mainBlack, bg=colors.mainOrange },
-    MiniStatuslineModeInsert = { fg = colors.mainBlack, bg=colors.mainGreen },
-    MiniStatuslineModeCommand = { fg = colors.mainBlack, bg=colors.mainCyan },
-    MiniStatuslineModeNormal = { fg = colors.mainBlack, bg=colors.mainYellow },
-    MiniStatuslineFileinfo = { fg = colors.mainGreen, bg=colors.bgDarkColor },
-    MiniStatuslineDevinfo = { fg = colors.mainGreen, bg=colors.bgDarkColor },
-    MiniStatuslineFilename = { fg = colors.mainGreen, bg=palette.bgNoBG},
-    MiniStatuslineInactive = { fg = colors.mainGreen, bg=palette.bgNoBG},
+    MiniStatuslineModeVisual = { fg = colors.black, bg=colors.constant },
+    MiniStatuslineModeInsert = { fg = colors.black, bg=colors.string },
+    MiniStatuslineModeCommand = { fg = colors.black, bg=colors.directory },
+    MiniStatuslineModeNormal = { fg = colors.black, bg=colors.special },
+    MiniStatuslineFileinfo = { fg = colors.string, bg=colors.bgDarkColor },
+    MiniStatuslineDevinfo = { fg = colors.string, bg=colors.bgDarkColor },
+    MiniStatuslineFilename = { fg = colors.string, bg=palette.bgTransp},
+    MiniStatuslineInactive = { fg = colors.string, bg=palette.bgTransp},
   }
 end
 

@@ -2,33 +2,33 @@ local palette = vim.g.palette
 local config = require("posterpole.config").current
 local colors = palette.colors
 
-local bg = config.lualine.transparent and palette.bgNoBG.hex or palette.bgDark.hex
+local bg = config.lualine.transparent and palette.bgTransp.hex or palette.bgDark.hex
 
 local posterpole = {
   normal = {
-    a = { fg = colors.mainBlack.hex, bg = colors.brightGray.hex },
-    b = { fg = colors.mainGreen.hex, bg = bg },
-    c = { fg = colors.mainGreen.hex, bg = bg },
+    a = { fg = colors.black.hex, bg = colors.comment.hex },
+    b = { fg = colors.black.hex, bg = bg },
+    c = { fg = colors.black.hex, bg = bg },
   },
   insert = {
-    a = { fg = colors.mainBlack.hex, bg = colors.mainGreen.hex },
+    a = { fg = colors.black.hex, bg = colors.string.hex },
   },
   command = {
-    a = { fg = colors.mainBlack.hex, bg = colors.mainYellow.hex },
+    a = { fg = colors.black.hex, bg = colors.special.hex },
   },
   visual = {
-    a = { fg = colors.mainBlack.hex, bg = colors.mainOrange.hex },
+    a = { fg = colors.black.hex, bg = colors.comment.hex },
   },
   replace = {
-    a = { fg = colors.mainBlack.hex, bg = colors.mainRed.hex },
+    a = { fg = colors.black.hex, bg = colors.keyword.hex },
   },
   terminal = {
-    a = { fg = colors.mainBlack.hex, bg = colors.mainBlue.hex },
+    a = { fg = colors.black.hex, bg = colors.keyword.hex },
   },
   inactive = {
-    a = { fg = colors.mainGray.hex, bg = bg },
-    b = { fg = colors.mainGray.hex, bg = bg },
-    c = { fg = colors.mainGray.hex, bg = bg },
+    a = { fg = colors.comment.hex, bg = bg },
+    b = { fg = colors.comment.hex, bg = bg },
+    c = { fg = colors.comment.hex, bg = bg },
   },
 }
 

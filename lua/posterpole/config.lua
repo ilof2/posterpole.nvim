@@ -4,17 +4,6 @@ M = {}
 local default = {
   transparent = false,
   dim_inactive = false,
-  brightness = 0,
-  selected_tab_highlight = true,
-  fg_saturation = 0,
-  bg_saturation = 0,
-  adaptive_brightness = {
-    enabled = false,
-    max_brightness = 1,
-    min_brightness = -6,
-    daylight_duration = 12,
-    noon_time = 12
-  },
   lualine = {
     transparent = true
   },

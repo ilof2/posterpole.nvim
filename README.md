@@ -31,11 +31,8 @@
 ## Features
 
 - 🪟 Transparency
-- 🎨 Configurable colors and highlight groups
-- ☀︎  Configurable brightness and saturation
 - 👾 `set notermguicolors` do not broke colors<br>
 terminals without `$TERM=xterm-256color` support
-- 🌗 Adaptive brightness based on current hour
 
 ## Installation
 
@@ -53,9 +50,6 @@ Lazy:
     })
     vim.cmd("colorscheme posterpole")
     
-    -- This function create sheduled task, which will reload theme every hour
-    -- Without "setup_adaptive" adaptive brightness will be set only after every restart
-    posterpole.setup_adaptive()
   end
 }
 ```
@@ -67,10 +61,6 @@ Lazy:
 require("posterpole").setup({
   transparent = false,
   dim_inactive = false, -- highlight inactive splits
-  brightness = 0, -- negative numbers - darker, positive - lighter
-  selected_tab_highlight = false, --highlight current selected tab
-  fg_saturation = 0, -- font saturation, gray colors become more brighter
-  bg_saturation = 0, -- background saturation
   colors = {
     posterpole = {}, -- { mainRed = {hex = "#550000", cterm = 95} }
   },
@@ -78,13 +68,6 @@ require("posterpole").setup({
     posterpole = {
      -- Comment = {fg = {hex = "#FFF000", cterm = 95 }}
     },
-  },
-  adaptive_brightness = {
-    enabled = false,
-    max_brightness = 1, -- maximum brightness for the day
-    min_brightness = -6, -- minimum brightness for the day
-    daylight_duration = 12, -- how long is daylight
-    noon_time = 12 -- hour when the theme will have maximum brightness
   },
   lualine = {
     transparent = true
@@ -126,10 +109,6 @@ You can override all colors that are used in colorscheme
 > [!IMPORTANT]
 > cterm color values should be integer in range **0-256**
 
-> [!NOTE]
-> `brightness`, `fg_saturation`, and `bg_saturation` settings are not applied to custom colors
-> Possibly it will added in the future
-
 256 colors helpers:
 
 - [256 color cheat sheet](https://www.ditig.com/publications/256-colors-cheat-sheet)
@@ -139,27 +118,25 @@ Colors list which can be overwritten:
 
 ```lua
 {
-  mainGray
-  mainBlack
-  mainYellow
-  mainOrange
-  mainWhite
-  mainGreen
-  mainCyan
-  mainBlue
-  mainPurple
-  mainRed
+  comment 
+  black
+  special
+  constant
+  fg
+  string
+  directory
+  func
+  type
+  keyword
 
-  -- scales
-  deepRed
-  deepGreen
-  brightGreen
-  brightGray
+  diffDel
+  diffChanged
+  diffAdded
 
   -- main bg colors
-  bgColor
-  bgColorNC
-  bgDarkColor
+  bg
+  bgDim
+  bgSurface
 }
 ```
 
