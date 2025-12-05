@@ -7,8 +7,8 @@ function M.setup(palette, config)
 	local colors = palette.colors
 
 	return {
-		CmpItemMenu = { fg = colors.mainYellow },
-		CmpItemAbbrMatch = { fg = colors.mainOrange, bold = true, force = true },
+		CmpItemMenu = { limk = "Pmenu" },
+		CmpItemAbbrMatch = { "PmenuSel" },
 		CmpItemKindFunction = { link = "Function", force = true },
 		CmpItemKindMethod = { link = "Function" },
 		CmpItemKindClass = { link = "Type", force = true },

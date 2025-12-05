@@ -1,106 +1,82 @@
 local config = require("posterpole.config").current
-local hsl = require("posterpole.hsl")
+local utils = require("posterpole.utils")
 
 local M = {}
 
 ---@param variant string
 ---@return Palette
 function M.setup(variant)
-	---@class PaletteColors
-	---@field posterpole Colors
-	local variants = {
-		posterpole = {
-			-- main colors
-			mainGray = {
-				cterm = 240,
-				hex = hsl.hslToHex(0, 0, 30 + config.brightness + config.fg_saturation),
-			},
-			mainBlack = {
-				cterm = 233,
-				hex = hsl.hslToHex(0, 5 + config.fg_saturation, 18 + config.brightness),
-			},
-			mainYellow = {
-				cterm = 144,
-				hex = hsl.hslToHex(25, 15 + config.fg_saturation, 60 + config.brightness),
-			},
-			mainOrange = {
-				cterm = 137,
-				hex = hsl.hslToHex(25, 45 + config.fg_saturation, 60 + config.brightness),
-			},
-			mainWhite = {
-				cterm = 145,
-				hex = hsl.hslToHex(35, 10 + config.fg_saturation, 65 + config.brightness),
-			},
-			mainGreen = {
-				cterm = 101,
-				hex = hsl.hslToHex(140, 10 + config.fg_saturation, 50 + config.brightness),
-			},
-			mainCyan = { cterm = 65, hex = hsl.hslToHex(174, 10 + config.fg_saturation, 60 + config.brightness) },
-			mainBlue = { cterm = 103, hex = hsl.hslToHex(210, 15 + config.fg_saturation, 50 + config.brightness) },
-			mainPurple = { cterm = 60, hex = hsl.hslToHex(284, 15 + config.fg_saturation, 45 + config.brightness) },
-			mainPink = { cterm = 139, hex = hsl.hslToHex(314, 20 + config.fg_saturation, 65 + config.brightness) },
-			mainRed = { cterm = 95, hex = hsl.hslToHex(360, 25 + config.fg_saturation, 55 + config.brightness) },
+  ---@class PaletteColors
+  ---@field posterpole Colors
+  local variants = {
+    posterpole = {
+      -- main colors
+      comment = { cterm = 240, hex = "#4d4d4d" },
+      black = { cterm = 233, hex = "#302c2c" },
+      special = { cterm = 144, hex = "#a8968a" },
+      constant = { cterm = 137, hex = "#c7916b" },
+      variable = { cterm = 145, hex = "#afa79d" },
+      string = { cterm = 101, hex = "#738c7b" },
+      directory = { cterm = 65, hex = "#8fa3a2" },
+      func = { cterm = 103, hex = "#6c7f93" },
+      type = { cterm = 60, hex = "#7b6284" },
+      keyword = { cterm = 95, hex = "#a97070" },
+      operator = { cterm = 244, hex = "#afa79d" },
+      fg = { cterm = 145, hex = "#afa79d" },
 
-			-- scales
-			deepRed = { cterm = 95, hex = hsl.hslToHex(0, 30 + config.fg_saturation, 30 + config.brightness) },
-			deepGreen = { cterm = 237, hex = hsl.hslToHex(150, 10 + config.fg_saturation, 20 + config.brightness) },
-			brightGreen = { cterm = 236, hex = hsl.hslToHex(160, 30 + config.fg_saturation, 20 + config.brightness) },
-			brightGray = { cterm = 244, hex = hsl.hslToHex(210, 0, 50 + config.brightness + config.fg_saturation) },
+      -- scales
+      diffDel = { cterm = 95, hex = "#633636" },
+      diffChanged = { cterm = 237, hex = "#2e3833" },
+      diffAdded = { cterm = 236, hex = "#244238" },
 
-			-- main bg colors
-			bgColor = { cterm = 234, hex = hsl.hslToHex(260, 10 + config.bg_saturation, 15 + config.brightness) },
-			bgColorNC = { cterm = 236, hex = hsl.hslToHex(260, 10 + config.bg_saturation, 18 + config.brightness) },
-			bgDarkColor = { cterm = 233, hex = hsl.hslToHex(260, 10 + config.bg_saturation, 14 + config.brightness) },
+      -- main bg colors
+      bg = { cterm = 234, hex = "#141414" },
+      bgDim = { cterm = 236, hex = utils.blend("#101010", "#0e0f07", 0.05) },
+      bgSurface = { cterm = 233, hex = "#161616" },
 
-			--builtin term bright colors
-			brightTermBlack = { cterm = 241, hex = hsl.hslToHex(0, 5 + config.fg_saturation, 28 + config.brightness) },
-			brightTermBlue = { cterm = 110, hex = hsl.hslToHex(210, 15 + config.fg_saturation, 60 + config.brightness) },
-			brightTermCyan = { cterm = 73, hex = hsl.hslToHex(174, 10 + config.fg_saturation, 60 + config.brightness) },
-			brightTermGreen = { cterm = 108, hex = hsl.hslToHex(140, 10 + config.fg_saturation, 60 + config.brightness) },
-			brightTermMagenta = {
-				cterm = 104,
-				hex = hsl.hslToHex(284, 15 + config.fg_saturation, 55 + config.brightness),
-			},
-			brightTermRed = { cterm = 167, hex = hsl.hslToHex(360, 25 + config.fg_saturation, 65 + config.brightness) },
-			brightTermWhite = { cterm = 253, hex = hsl.hslToHex(35, 10 + config.fg_saturation, 75 + config.brightness) },
-			brightTermYellow = { cterm = 186, hex = hsl.hslToHex(25, 45 + config.fg_saturation, 70 + config.brightness) },
-		},
-	}
+      --builtin term bright colors
+      brightTermBlack = { cterm = 241, hex = "#4b4444" },
+      brightTermBlue = { cterm = 110, hex = "#8a99a8" },
+      brightTermCyan = { cterm = 73, hex = "#8fa3a2" },
+      brightTermGreen = { cterm = 108, hex = "#8fa396" },
+      brightTermMagenta = { cterm = 104, hex = "#957b9d" },
+      brightTermRed = { cterm = 167, hex = "#bc8f8f" },
+      brightTermWhite = { cterm = 253, hex = "#c6c0b9" },
+      brightTermYellow = { cterm = 186, hex = "#d5ad90" },
+    },
+  }
 
-	variants = vim.tbl_deep_extend("force", vim.deepcopy(variants), config.colors)
-	local colors = variants.posterpole
+  variants = vim.tbl_deep_extend("force", vim.deepcopy(variants), config.colors)
+  local colors = variants.posterpole
 
   -- FIXME: Should be refactored
-	local bgColor = colors.bgColor
-	local bg = bgColor
+  local bgColor = colors.bg
+  local bg = bgColor
 
-	-- transparent
-	local bgNoBG = config.transparent and {hex="", cterm=""} or bg
+  -- transparent
+  local bgTransp = config.transparent and { hex = "", cterm = "" } or bg
 
-	-- dark
+  -- dark
   -- FIXME: Should be refactored
-	local bgDarkColor = colors.bgDarkColor
-	local bgDark = bgDarkColor
-	local bgDarkNoBG = config.transparent and {hex="", cterm=""} or bgDark
+  local bgDarkNoBG = config.transparent and { hex = "", cterm = "" } or colors.bgSurface
 
-	-- inactive
-	local bgInactiveColor = config.dim_inactive and colors.bgColorNC or bgNoBG
-	local bgInactive = bgInactiveColor
+  -- inactive
+  local bgInactiveColor = config.dim_inactive and colors.bgDim or bgTransp
+  local bgInactive = bgInactiveColor
 
-	---@class Palette
-	local palette = {
-		colors = colors,
-		bgColor = bgColor,
+  ---@class Palette
+  local palette = {
+    colors = colors,
+    bgColor = bgColor,
     bg = bg,
-		fg = colors.mainRed,
-    bgNoBG = bgNoBG,
-		bgDarkColor = bgDarkColor,
-    bgDark = bgDark,
+    bgTransp = bgTransp,
+    bgDarkColor = colors.bgSurface,
+    bgDark = colors.bgSurface,
     bgDarkNoBG = bgDarkNoBG,
-		bgInactiveColor = bgInactiveColor,
-		bgInactive = bgInactive,
-	}
-	return palette
+    bgInactiveColor = bgInactiveColor,
+    bgInactive = bgInactive,
+  }
+  return palette
 end
 
 return M

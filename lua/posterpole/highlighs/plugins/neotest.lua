@@ -7,21 +7,21 @@ function M.setup(palette, config)
   local colors = palette.colors
 
   return {
-    NeotestPassed = { fg = colors.mainGreen },
-    NeotestFailed = { fg = colors.mainRed },
-    NeotestRunning = { fg = colors.mainOrange, bold = true },
-    NeotestSkipped = { fg = colors.mainGray },
-    NeotestFocused = { fg = colors.mainYellow, underline = true },
-    NeotestFile = { fg = colors.mainWhite },
-    NeotestDir = { fg = colors.mainCyan },
+    NeotestPassed = { fg = colors.string },
+    NeotestFailed = { fg = colors.keyword },
+    NeotestRunning = { fg = colors.constant, bold = true },
+    NeotestSkipped = { fg = colors.comment },
+    NeotestFocused = { fg = colors.special, underline = true },
+    NeotestFile = { fg = colors.fg },
+    NeotestDir = { link = "Directory" },
     -- NeotestIndent
     -- NeotestExpandMarker
-    NeotestAdapterName = { fg = colors.mainRed },
+    NeotestAdapterName = { fg = colors.keyword },
     -- NeotestMarked
     -- NeotestTarget
-    NeotestWatching = { fg = colors.mainPurple },
+    NeotestWatching = { link = "Type" },
     NeotestNamespace = { link = "Type" },
-    NeotestWinSelect = { fg = colors.mainCyan },
+    NeotestWinSelect = { link = "Directory" },
     NeotestMarked = { link = "QuickFixLine" },
     NeotestTarget = { link = "Keyword" },
   }

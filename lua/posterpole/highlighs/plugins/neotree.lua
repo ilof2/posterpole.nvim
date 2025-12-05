@@ -9,12 +9,12 @@ function M.setup(palette, config)
 	return {
 		-- NeoTreeFileNameOpened
 		-- NeoTreeRootName
-		NeoTreeModified = { fg = colors.mainCyan },
+		NeoTreeModified = { fg = colors.directory },
 		NeoTreeGitAdded = { fg = colors.deepRed },
-		NeoTreeGitDeleted = { fg = colors.mainRed },
-		NeoTreeGitModified = { fg = colors.mainYellow },
-		NeoTreeGitConflict = { fg = colors.mainOrange },
-		NeoTreeGitUntracked = { fg = colors.mainPurple },
+		NeoTreeGitDeleted = { fg = colors.keyword },
+		NeoTreeGitModified = { fg = colors.special },
+		NeoTreeGitConflict = { fg = colors.constant },
+		NeoTreeGitUntracked = { fg = colors.type },
 	}
 end
 
