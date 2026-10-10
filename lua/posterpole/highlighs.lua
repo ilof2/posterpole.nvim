@@ -25,6 +25,7 @@ local function set_highlights(highlights)
     setting.bold = highlight.bold
     setting.underline = highlight.underline
     setting.reverse = highlight.reverse
+    setting.italic = highlight.italic
 		vim.api.nvim_set_hl(0, name, setting)
 	end
 end
